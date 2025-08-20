@@ -1,0 +1,3 @@
+5.00%
+- A minimum international fee of 0.99 USD
+- A maximum international fee of 4.99 USD

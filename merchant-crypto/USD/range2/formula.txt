@@ -1,0 +1,1 @@
+if amount is between 75.00 – 200.00 USD, then 2%
