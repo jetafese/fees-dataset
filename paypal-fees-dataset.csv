@@ -1,8 +1,8 @@
 type,kind,currency,condition,formula
-consumer-crypto,consumer,USD,range,"if amount is between 1.00 - 74.99 USD, then 2.2%"
-consumer-crypto,consumer,USD,range,"if amount is between 75.00 – 200.00 USD, then 2%"
-consumer-crypto,consumer,USD,range,"if amount is between 200.01 – 1000.00 USD, then 1.8%"
-consumer-crypto,consumer,USD,range,"if amount is > 1000.01 USD, then 1.5%"
+consumer-crypto,consumer,USD,range1,"if amount is between 1.00 - 74.99 USD, then 2.2%"
+consumer-crypto,consumer,USD,range2,"if amount is between 75.00 – 200.00 USD, then 2%"
+consumer-crypto,consumer,USD,range3,"if amount is between 200.01 – 1000.00 USD, then 1.8%"
+consumer-crypto,consumer,USD,range4,"if amount is > 1000.01 USD, then 1.5%"
 consumer-donations,consumer,AUD,Donate-Button,2.89% + 0.59 AUD
 consumer-donations,consumer,BRL,Donate-Button,2.89% + 2.90 BRL
 consumer-donations,consumer,CAD,Donate-Button,2.89% + 0.59 CAD
@@ -138,10 +138,10 @@ domestic-personal-transactions,consumer,CHF,Cards,2.90% + 0.55 CHF
 domestic-personal-transactions,consumer,THB,Cards,2.90% + 11.00 THB
 domestic-personal-transactions,consumer,GBP,Cards,2.90% + 0.20 GBP
 domestic-personal-transactions,consumer,USD,Cards,2.90% + 0.30 USD
-merchant-crypto,merchant,USD,range,"if amount is between 1.00 - 74.99 USD, then 2.2%"
-merchant-crypto,merchant,USD,range,"if amount is between 75.00 – 200.00 USD, then 2%"
-merchant-crypto,merchant,USD,range,"if amount is between 200.01 – 1000.00 USD, then 1.8%"
-merchant-crypto,merchant,USD,range,"if amount is > 1000.01 USD, then 1.5%"
+merchant-crypto,merchant,USD,range1,"if amount is between 1.00 - 74.99 USD, then 2.2%"
+merchant-crypto,merchant,USD,range2,"if amount is between 75.00 – 200.00 USD, then 2%"
+merchant-crypto,merchant,USD,range3,"if amount is between 200.01 – 1000.00 USD, then 1.8%"
+merchant-crypto,merchant,USD,range4,"if amount is > 1000.01 USD, then 1.5%"
 recv-domestic-transactions,merchant,AUD,APM-Direct,2.89% + 0.39 AUD
 recv-domestic-transactions,merchant,BRL,APM-Direct,2.89% + 1.70 BRL
 recv-domestic-transactions,merchant,CAD,APM-Direct,2.89% + 0.39 CAD
