@@ -1,140 +1,580 @@
-type,currency,condition,formula,,,,,
-consumer-crypto,USD,range,"if amount is between 1.00 - 74.99 USD, then 2.2%",,,,,
-consumer-crypto,USD,range,"if amount is between 75.00 – 200.00 USD, then 2%",,,,,
-consumer-crypto,USD,range,"if amount is between 200.01 – 1000.00 USD, then 1.8%",,,,,
-consumer-crypto,USD,range,"if amount is > 1000.01 USD, then 1.5%",,,,,
-consumer-donations,AUD,Donate-Button,2.89% + 0.59 AUD,,,,,
-consumer-donations,BRL,Donate-Button,2.89% + 2.90 BRL,,,,,
-consumer-donations,CAD,Donate-Button,2.89% + 0.59 CAD,,,,,
-consumer-donations,CZK,Donate-Button,2.89% + 9.00 CZK,,,,,
-consumer-donations,DKK,Donate-Button,2.89% + 2.90 DKK,,,,,
-consumer-donations,EUR,Donate-Button,2.89% + 0.39 EUR,,,,,
-consumer-donations,HKD,Donate-Button,2.89% + 3.79 HKD,,,,,
-consumer-donations,HUF,Donate-Button,2.89% + 149.00 HUF,,,,,
-consumer-donations,ILS,Donate-Button,2.89% + 1.60 ILS,,,,,
-consumer-donations,JPY,Donate-Button,2.89% + 49.00 JPY,,,,,
-consumer-donations,MYR,Donate-Button,2.89% + 2.00 MYR,,,,,
-consumer-donations,MXN,Donate-Button,2.89% + 9.00 MXN,,,,,
-consumer-donations,TWD,Donate-Button,2.89% + 14.00 TWD,,,,,
-consumer-donations,NZD,Donate-Button,2.89% + 0.69 NZD,,,,,
-consumer-donations,NOK,Donate-Button,2.89% + 3.90 NOK,,,,,
-consumer-donations,PHP,Donate-Button,2.89% + 25.00 PHP,,,,,
-consumer-donations,PLN,Donate-Button,2.89% + 1.89 PLN,,,,,
-consumer-donations,RUB,Donate-Button,2.89% + 39.00 RUB,,,,,
-consumer-donations,SGD,Donate-Button,2.89% + 0.69 SGD,,,,,
-consumer-donations,SEK,Donate-Button,2.89% + 4.09 SEK,,,,,
-consumer-donations,CHF,Donate-Button,2.89% + 0.49 CHF,,,,,
-consumer-donations,THB,Donate-Button,2.89% + 15.00 THB,,,,,
-consumer-donations,GBP,Donate-Button,2.89% + 0.39 GBP,,,,,
-consumer-donations,USD,Donate-Button,2.89% + 0.49 USD,,,,,
-consumer-donations,AUD,Paypal-Checkout,2.89% + 0.59 AUD,,,,,
-consumer-donations,BRL,Paypal-Checkout,2.89% + 2.90 BRL,,,,,
-consumer-donations,CAD,Paypal-Checkout,2.89% + 0.59 CAD,,,,,
-consumer-donations,CZK,Paypal-Checkout,2.89% + 9.00 CZK,,,,,
-consumer-donations,DKK,Paypal-Checkout,2.89% + 2.90 DKK,,,,,
-consumer-donations,EUR,Paypal-Checkout,2.89% + 0.39 EUR,,,,,
-consumer-donations,HKD,Paypal-Checkout,2.89% + 3.79 HKD,,,,,
-consumer-donations,HUF,Paypal-Checkout,2.89% + 149.00 HUF,,,,,
-consumer-donations,ILS,Paypal-Checkout,2.89% + 1.60 ILS,,,,,
-consumer-donations,JPY,Paypal-Checkout,2.89% + 49.00 JPY,,,,,
-consumer-donations,MYR,Paypal-Checkout,2.89% + 2.00 MYR,,,,,
-consumer-donations,MXN,Paypal-Checkout,2.89% + 9.00 MXN,,,,,
-consumer-donations,TWD,Paypal-Checkout,2.89% + 14.00 TWD,,,,,
-consumer-donations,NZD,Paypal-Checkout,2.89% + 0.69 NZD,,,,,
-consumer-donations,NOK,Paypal-Checkout,2.89% + 3.90 NOK,,,,,
-consumer-donations,PHP,Paypal-Checkout,2.89% + 25.00 PHP,,,,,
-consumer-donations,PLN,Paypal-Checkout,2.89% + 1.89 PLN,,,,,
-consumer-donations,RUB,Paypal-Checkout,2.89% + 39.00 RUB,,,,,
-consumer-donations,SGD,Paypal-Checkout,2.89% + 0.69 SGD,,,,,
-consumer-donations,SEK,Paypal-Checkout,2.89% + 4.09 SEK,,,,,
-consumer-donations,CHF,Paypal-Checkout,2.89% + 0.49 CHF,,,,,
-consumer-donations,THB,Paypal-Checkout,2.89% + 15.00 THB,,,,,
-consumer-donations,GBP,Paypal-Checkout,2.89% + 0.39 GBP,,,,,
-consumer-donations,USD,Paypal-Checkout,2.89% + 0.49 USD,,,,,
-consumer-international-donations,AUD,Donate-Button,2.89% + 1.50% + 0.59 AUD,,,,,
-consumer-international-donations,BRL,Donate-Button,2.89% + 1.50% + 2.90 BRL,,,,,
-consumer-international-donations,CAD,Donate-Button,2.89% + 1.50% +  0.59 CAD,,,,,
-consumer-international-donations,CZK,Donate-Button,2.89% + 1.50% +  9.00 CZK,,,,,
-consumer-international-donations,DKK,Donate-Button,2.89% + 1.50% +  2.90 DKK,,,,,
-consumer-international-donations,EUR,Donate-Button,2.89% + 1.50% +  0.39 EUR,,,,,
-consumer-international-donations,HKD,Donate-Button,2.89% + 1.50% +  3.79 HKD,,,,,
-consumer-international-donations,HUF,Donate-Button,2.89% + 1.50% +  149.00 HUF,,,,,
-consumer-international-donations,ILS,Donate-Button,2.89% + 1.50% +  1.60 ILS,,,,,
-consumer-international-donations,JPY,Donate-Button,2.89% + 1.50% +  49.00 JPY,,,,,
-consumer-international-donations,MYR,Donate-Button,2.89% + 1.50% +  2.00 MYR,,,,,
-consumer-international-donations,MXN,Donate-Button,2.89% + 1.50% +  9.00 MXN,,,,,
-consumer-international-donations,TWD,Donate-Button,2.89% + 1.50% +  14.00 TWD,,,,,
-consumer-international-donations,NZD,Donate-Button,2.89% + 1.50% +  0.69 NZD,,,,,
-consumer-international-donations,NOK,Donate-Button,2.89% + 1.50% +  3.90 NOK,,,,,
-consumer-international-donations,PHP,Donate-Button,2.89% + 1.50% +  25.00 PHP,,,,,
-consumer-international-donations,PLN,Donate-Button,2.89% + 1.50% +  1.89 PLN,,,,,
-consumer-international-donations,RUB,Donate-Button,2.89% + 1.50% +  39.00 RUB,,,,,
-consumer-international-donations,SGD,Donate-Button,2.89% + 1.50% +  0.69 SGD,,,,,
-consumer-international-donations,SEK,Donate-Button,2.89% + 1.50% +  4.09 SEK,,,,,
-consumer-international-donations,CHF,Donate-Button,2.89% + 1.50% +  0.49 CHF,,,,,
-consumer-international-donations,THB,Donate-Button,2.89% + 1.50% +  15.00 THB,,,,,
-consumer-international-donations,GBP,Donate-Button,2.89% + 1.50% +  0.39 GBP,,,,,
-consumer-international-donations,USD,Donate-Button,2.89% + 1.50% +  0.49 USD,,,,,
-consumer-international-donations,AUD,Paypal-Checkout,2.89% + 1.50% + 0.59 AUD,,,,,
-consumer-international-donations,BRL,Paypal-Checkout,2.89% + 1.50% + 2.90 BRL,,,,,
-consumer-international-donations,CAD,Paypal-Checkout,2.89% + 1.50% +  0.59 CAD,,,,,
-consumer-international-donations,CZK,Paypal-Checkout,2.89% + 1.50% +  9.00 CZK,,,,,
-consumer-international-donations,DKK,Paypal-Checkout,2.89% + 1.50% +  2.90 DKK,,,,,
-consumer-international-donations,EUR,Paypal-Checkout,2.89% + 1.50% +  0.39 EUR,,,,,
-consumer-international-donations,HKD,Paypal-Checkout,2.89% + 1.50% +  3.79 HKD,,,,,
-consumer-international-donations,HUF,Paypal-Checkout,2.89% + 1.50% +  149.00 HUF,,,,,
-consumer-international-donations,ILS,Paypal-Checkout,2.89% + 1.50% +  1.60 ILS,,,,,
-consumer-international-donations,JPY,Paypal-Checkout,2.89% + 1.50% +  49.00 JPY,,,,,
-consumer-international-donations,MYR,Paypal-Checkout,2.89% + 1.50% +  2.00 MYR,,,,,
-consumer-international-donations,MXN,Paypal-Checkout,2.89% + 1.50% +  9.00 MXN,,,,,
-consumer-international-donations,TWD,Paypal-Checkout,2.89% + 1.50% +  14.00 TWD,,,,,
-consumer-international-donations,NZD,Paypal-Checkout,2.89% + 1.50% +  0.69 NZD,,,,,
-consumer-international-donations,NOK,Paypal-Checkout,2.89% + 1.50% +  3.90 NOK,,,,,
-consumer-international-donations,PHP,Paypal-Checkout,2.89% + 1.50% +  25.00 PHP,,,,,
-consumer-international-donations,PLN,Paypal-Checkout,2.89% + 1.50% +  1.89 PLN,,,,,
-consumer-international-donations,RUB,Paypal-Checkout,2.89% + 1.50% +  39.00 RUB,,,,,
-consumer-international-donations,SGD,Paypal-Checkout,2.89% + 1.50% +  0.69 SGD,,,,,
-consumer-international-donations,SEK,Paypal-Checkout,2.89% + 1.50% +  4.09 SEK,,,,,
-consumer-international-donations,CHF,Paypal-Checkout,2.89% + 1.50% +  0.49 CHF,,,,,
-consumer-international-donations,THB,Paypal-Checkout,2.89% + 1.50% +  15.00 THB,,,,,
-consumer-international-donations,GBP,Paypal-Checkout,2.89% + 1.50% +  0.39 GBP,,,,,
-consumer-international-donations,USD,Paypal-Checkout,2.89% + 1.50% +  0.49 USD,,,,,
-domestic-personal-transactions,USD,PayPal balance or a bank account,No fee,,,,,
-domestic-personal-transactions,USD,Amex Send™ Account,No fee,,,,,
-domestic-personal-transactions,USD,Visa+ transaction to Venmo Visa+-enabled digital wallets,No Fee,,,,,
-domestic-personal-transactions,USD,Visa+ transaction to non-Venmo Visa+-enabled digital wallets,"1.75%
+type,kind,currency,condition,formula
+consumer-crypto,consumer,USD,range,"if amount is between 1.00 - 74.99 USD, then 2.2%"
+consumer-crypto,consumer,USD,range,"if amount is between 75.00 – 200.00 USD, then 2%"
+consumer-crypto,consumer,USD,range,"if amount is between 200.01 – 1000.00 USD, then 1.8%"
+consumer-crypto,consumer,USD,range,"if amount is > 1000.01 USD, then 1.5%"
+consumer-donations,consumer,AUD,Donate-Button,2.89% + 0.59 AUD
+consumer-donations,consumer,BRL,Donate-Button,2.89% + 2.90 BRL
+consumer-donations,consumer,CAD,Donate-Button,2.89% + 0.59 CAD
+consumer-donations,consumer,CZK,Donate-Button,2.89% + 9.00 CZK
+consumer-donations,consumer,DKK,Donate-Button,2.89% + 2.90 DKK
+consumer-donations,consumer,EUR,Donate-Button,2.89% + 0.39 EUR
+consumer-donations,consumer,HKD,Donate-Button,2.89% + 3.79 HKD
+consumer-donations,consumer,HUF,Donate-Button,2.89% + 149.00 HUF
+consumer-donations,consumer,ILS,Donate-Button,2.89% + 1.60 ILS
+consumer-donations,consumer,JPY,Donate-Button,2.89% + 49.00 JPY
+consumer-donations,consumer,MYR,Donate-Button,2.89% + 2.00 MYR
+consumer-donations,consumer,MXN,Donate-Button,2.89% + 9.00 MXN
+consumer-donations,consumer,TWD,Donate-Button,2.89% + 14.00 TWD
+consumer-donations,consumer,NZD,Donate-Button,2.89% + 0.69 NZD
+consumer-donations,consumer,NOK,Donate-Button,2.89% + 3.90 NOK
+consumer-donations,consumer,PHP,Donate-Button,2.89% + 25.00 PHP
+consumer-donations,consumer,PLN,Donate-Button,2.89% + 1.89 PLN
+consumer-donations,consumer,RUB,Donate-Button,2.89% + 39.00 RUB
+consumer-donations,consumer,SGD,Donate-Button,2.89% + 0.69 SGD
+consumer-donations,consumer,SEK,Donate-Button,2.89% + 4.09 SEK
+consumer-donations,consumer,CHF,Donate-Button,2.89% + 0.49 CHF
+consumer-donations,consumer,THB,Donate-Button,2.89% + 15.00 THB
+consumer-donations,consumer,GBP,Donate-Button,2.89% + 0.39 GBP
+consumer-donations,consumer,USD,Donate-Button,2.89% + 0.49 USD
+consumer-donations,consumer,AUD,Paypal-Checkout,2.89% + 0.59 AUD
+consumer-donations,consumer,BRL,Paypal-Checkout,2.89% + 2.90 BRL
+consumer-donations,consumer,CAD,Paypal-Checkout,2.89% + 0.59 CAD
+consumer-donations,consumer,CZK,Paypal-Checkout,2.89% + 9.00 CZK
+consumer-donations,consumer,DKK,Paypal-Checkout,2.89% + 2.90 DKK
+consumer-donations,consumer,EUR,Paypal-Checkout,2.89% + 0.39 EUR
+consumer-donations,consumer,HKD,Paypal-Checkout,2.89% + 3.79 HKD
+consumer-donations,consumer,HUF,Paypal-Checkout,2.89% + 149.00 HUF
+consumer-donations,consumer,ILS,Paypal-Checkout,2.89% + 1.60 ILS
+consumer-donations,consumer,JPY,Paypal-Checkout,2.89% + 49.00 JPY
+consumer-donations,consumer,MYR,Paypal-Checkout,2.89% + 2.00 MYR
+consumer-donations,consumer,MXN,Paypal-Checkout,2.89% + 9.00 MXN
+consumer-donations,consumer,TWD,Paypal-Checkout,2.89% + 14.00 TWD
+consumer-donations,consumer,NZD,Paypal-Checkout,2.89% + 0.69 NZD
+consumer-donations,consumer,NOK,Paypal-Checkout,2.89% + 3.90 NOK
+consumer-donations,consumer,PHP,Paypal-Checkout,2.89% + 25.00 PHP
+consumer-donations,consumer,PLN,Paypal-Checkout,2.89% + 1.89 PLN
+consumer-donations,consumer,RUB,Paypal-Checkout,2.89% + 39.00 RUB
+consumer-donations,consumer,SGD,Paypal-Checkout,2.89% + 0.69 SGD
+consumer-donations,consumer,SEK,Paypal-Checkout,2.89% + 4.09 SEK
+consumer-donations,consumer,CHF,Paypal-Checkout,2.89% + 0.49 CHF
+consumer-donations,consumer,THB,Paypal-Checkout,2.89% + 15.00 THB
+consumer-donations,consumer,GBP,Paypal-Checkout,2.89% + 0.39 GBP
+consumer-donations,consumer,USD,Paypal-Checkout,2.89% + 0.49 USD
+consumer-international-donations,consumer,AUD,Donate-Button,2.89% + 1.50% + 0.59 AUD
+consumer-international-donations,consumer,BRL,Donate-Button,2.89% + 1.50% + 2.90 BRL
+consumer-international-donations,consumer,CAD,Donate-Button,2.89% + 1.50% +  0.59 CAD
+consumer-international-donations,consumer,CZK,Donate-Button,2.89% + 1.50% +  9.00 CZK
+consumer-international-donations,consumer,DKK,Donate-Button,2.89% + 1.50% +  2.90 DKK
+consumer-international-donations,consumer,EUR,Donate-Button,2.89% + 1.50% +  0.39 EUR
+consumer-international-donations,consumer,HKD,Donate-Button,2.89% + 1.50% +  3.79 HKD
+consumer-international-donations,consumer,HUF,Donate-Button,2.89% + 1.50% +  149.00 HUF
+consumer-international-donations,consumer,ILS,Donate-Button,2.89% + 1.50% +  1.60 ILS
+consumer-international-donations,consumer,JPY,Donate-Button,2.89% + 1.50% +  49.00 JPY
+consumer-international-donations,consumer,MYR,Donate-Button,2.89% + 1.50% +  2.00 MYR
+consumer-international-donations,consumer,MXN,Donate-Button,2.89% + 1.50% +  9.00 MXN
+consumer-international-donations,consumer,TWD,Donate-Button,2.89% + 1.50% +  14.00 TWD
+consumer-international-donations,consumer,NZD,Donate-Button,2.89% + 1.50% +  0.69 NZD
+consumer-international-donations,consumer,NOK,Donate-Button,2.89% + 1.50% +  3.90 NOK
+consumer-international-donations,consumer,PHP,Donate-Button,2.89% + 1.50% +  25.00 PHP
+consumer-international-donations,consumer,PLN,Donate-Button,2.89% + 1.50% +  1.89 PLN
+consumer-international-donations,consumer,RUB,Donate-Button,2.89% + 1.50% +  39.00 RUB
+consumer-international-donations,consumer,SGD,Donate-Button,2.89% + 1.50% +  0.69 SGD
+consumer-international-donations,consumer,SEK,Donate-Button,2.89% + 1.50% +  4.09 SEK
+consumer-international-donations,consumer,CHF,Donate-Button,2.89% + 1.50% +  0.49 CHF
+consumer-international-donations,consumer,THB,Donate-Button,2.89% + 1.50% +  15.00 THB
+consumer-international-donations,consumer,GBP,Donate-Button,2.89% + 1.50% +  0.39 GBP
+consumer-international-donations,consumer,USD,Donate-Button,2.89% + 1.50% +  0.49 USD
+consumer-international-donations,consumer,AUD,Paypal-Checkout,2.89% + 1.50% + 0.59 AUD
+consumer-international-donations,consumer,BRL,Paypal-Checkout,2.89% + 1.50% + 2.90 BRL
+consumer-international-donations,consumer,CAD,Paypal-Checkout,2.89% + 1.50% +  0.59 CAD
+consumer-international-donations,consumer,CZK,Paypal-Checkout,2.89% + 1.50% +  9.00 CZK
+consumer-international-donations,consumer,DKK,Paypal-Checkout,2.89% + 1.50% +  2.90 DKK
+consumer-international-donations,consumer,EUR,Paypal-Checkout,2.89% + 1.50% +  0.39 EUR
+consumer-international-donations,consumer,HKD,Paypal-Checkout,2.89% + 1.50% +  3.79 HKD
+consumer-international-donations,consumer,HUF,Paypal-Checkout,2.89% + 1.50% +  149.00 HUF
+consumer-international-donations,consumer,ILS,Paypal-Checkout,2.89% + 1.50% +  1.60 ILS
+consumer-international-donations,consumer,JPY,Paypal-Checkout,2.89% + 1.50% +  49.00 JPY
+consumer-international-donations,consumer,MYR,Paypal-Checkout,2.89% + 1.50% +  2.00 MYR
+consumer-international-donations,consumer,MXN,Paypal-Checkout,2.89% + 1.50% +  9.00 MXN
+consumer-international-donations,consumer,TWD,Paypal-Checkout,2.89% + 1.50% +  14.00 TWD
+consumer-international-donations,consumer,NZD,Paypal-Checkout,2.89% + 1.50% +  0.69 NZD
+consumer-international-donations,consumer,NOK,Paypal-Checkout,2.89% + 1.50% +  3.90 NOK
+consumer-international-donations,consumer,PHP,Paypal-Checkout,2.89% + 1.50% +  25.00 PHP
+consumer-international-donations,consumer,PLN,Paypal-Checkout,2.89% + 1.50% +  1.89 PLN
+consumer-international-donations,consumer,RUB,Paypal-Checkout,2.89% + 1.50% +  39.00 RUB
+consumer-international-donations,consumer,SGD,Paypal-Checkout,2.89% + 1.50% +  0.69 SGD
+consumer-international-donations,consumer,SEK,Paypal-Checkout,2.89% + 1.50% +  4.09 SEK
+consumer-international-donations,consumer,CHF,Paypal-Checkout,2.89% + 1.50% +  0.49 CHF
+consumer-international-donations,consumer,THB,Paypal-Checkout,2.89% + 1.50% +  15.00 THB
+consumer-international-donations,consumer,GBP,Paypal-Checkout,2.89% + 1.50% +  0.39 GBP
+consumer-international-donations,consumer,USD,Paypal-Checkout,2.89% + 1.50% +  0.49 USD
+domestic-personal-transactions,consumer,USD,PayPal-or-bank,No fee
+domestic-personal-transactions,consumer,USD,Amex-Send,No fee
+domestic-personal-transactions,consumer,USD,Visa-to-Venmo,No Fee
+domestic-personal-transactions,consumer,USD,Visa-to-non-Venmo,"1.75%
 - A minimum fee of 0.25 USD
-- A maximum fee of 25.00 USD",,,,AUD,2.90% + 0.30 AUD
-international-personal-transactions,USD,PayPal balance or a bank account,"5.00%
+- A maximum fee of 25.00 USD"
+international-personal-transactions,consumer,USD,PayPal-or-bank,"5.00%
 - A minimum international fee of 0.99 USD
-- A maximum international fee of 4.99 USD",,,,BRL,2.90% + 0.60 BRL
-international-personal-transactions,USD,Cards,"5.00%
+- A maximum international fee of 4.99 USD"
+international-personal-transactions,consumer,USD,Cards,"5.00%
 - A minimum international fee of 0.99 USD
-- A maximum international fee of 4.99 USD",,,,CAD,2.90% + 0.30 CAD
-international-personal-transactions,USD,Amex Send™ Account,"5.00%
+- A maximum international fee of 4.99 USD"
+international-personal-transactions,consumer,USD,Amex-Send,"5.00%
 - A minimum international fee of 0.99 USD
-- A maximum international fee of 4.99 USD",,,,CZK,2.90% + 10.00 CZK
-domestic-personal-transactions,AUD,Cards,2.90% + 0.30 AUD,,,,DKK,2.90% + 2.60 DKK
-domestic-personal-transactions,BRL,Cards,2.90% + 0.60 BRL,,,,EUR,2.90% + 0.35 EUR
-domestic-personal-transactions,CAD,Cards,2.90% + 0.30 CAD,,,,HKD,2.90% + 2.35 HKD
-domestic-personal-transactions,CZK,Cards,2.90% + 10.00 CZK,,,,HUF,2.90% + 90.00 HUF
-domestic-personal-transactions,DKK,Cards,2.90% + 2.60 DKK,,,,ILS,2.90% + 1.20 ILS
-domestic-personal-transactions,EUR,Cards,2.90% + 0.35 EUR,,,,JPY,2.90% + 40.00 JPY
-domestic-personal-transactions,HKD,Cards,2.90% + 2.35 HKD,,,,MYR,2.90% + 2.00 MYR
-domestic-personal-transactions,HUF,Cards,2.90% + 90.00 HUF,,,,MXN,2.90% + 4.00 MXN
-domestic-personal-transactions,ILS,Cards,2.90% + 1.20 ILS,,,,TWD,2.90% + 10.00 TWD
-domestic-personal-transactions,JPY,Cards,2.90% + 40.00 JPY,,,,NZD,2.90% + 0.45 NZD
-domestic-personal-transactions,MYR,Cards,2.90% + 2.00 MYR,,,,NOK,2.90% + 2.80 NOK
-domestic-personal-transactions,MXN,Cards,2.90% + 4.00 MXN,,,,PHP,2.90% + 15.00 PHP
-domestic-personal-transactions,TWD,Cards,2.90% + 10.00 TWD,,,,PLN,2.90% + 1.35 PLN
-domestic-personal-transactions,NZD,Cards,2.90% + 0.45 NZD,,,,RUB,2.90% + 10.00 RUB
-domestic-personal-transactions,NOK,Cards,2.90% + 2.80 NOK,,,,SGD,2.90% + 0.50 SGD
-domestic-personal-transactions,PHP,Cards,2.90% + 15.00 PHP,,,,SEK,2.90% + 3.25 SEK
-domestic-personal-transactions,PLN,Cards,2.90% + 1.35 PLN,,,,CHF,2.90% + 0.55 CHF
-domestic-personal-transactions,RUB,Cards,2.90% + 10.00 RUB,,,,THB,2.90% + 11.00 THB
-domestic-personal-transactions,SGD,Cards,2.90% + 0.50 SGD,,,,GBP,2.90% + 0.20 GBP
-domestic-personal-transactions,SEK,Cards,2.90% + 3.25 SEK,,,,USD,2.90% + 0.30 USD
-domestic-personal-transactions,CHF,Cards,2.90% + 0.55 CHF,,,,,
-domestic-personal-transactions,THB,Cards,2.90% + 11.00 THB,,,,,
-domestic-personal-transactions,GBP,Cards,2.90% + 0.20 GBP,,,,,
-domestic-personal-transactions,USD,Cards,2.90% + 0.30 USD,,,,,
+- A maximum international fee of 4.99 USD"
+domestic-personal-transactions,consumer,AUD,Cards,2.90% + 0.30 AUD
+domestic-personal-transactions,consumer,BRL,Cards,2.90% + 0.60 BRL
+domestic-personal-transactions,consumer,CAD,Cards,2.90% + 0.30 CAD
+domestic-personal-transactions,consumer,CZK,Cards,2.90% + 10.00 CZK
+domestic-personal-transactions,consumer,DKK,Cards,2.90% + 2.60 DKK
+domestic-personal-transactions,consumer,EUR,Cards,2.90% + 0.35 EUR
+domestic-personal-transactions,consumer,HKD,Cards,2.90% + 2.35 HKD
+domestic-personal-transactions,consumer,HUF,Cards,2.90% + 90.00 HUF
+domestic-personal-transactions,consumer,ILS,Cards,2.90% + 1.20 ILS
+domestic-personal-transactions,consumer,JPY,Cards,2.90% + 40.00 JPY
+domestic-personal-transactions,consumer,MYR,Cards,2.90% + 2.00 MYR
+domestic-personal-transactions,consumer,MXN,Cards,2.90% + 4.00 MXN
+domestic-personal-transactions,consumer,TWD,Cards,2.90% + 10.00 TWD
+domestic-personal-transactions,consumer,NZD,Cards,2.90% + 0.45 NZD
+domestic-personal-transactions,consumer,NOK,Cards,2.90% + 2.80 NOK
+domestic-personal-transactions,consumer,PHP,Cards,2.90% + 15.00 PHP
+domestic-personal-transactions,consumer,PLN,Cards,2.90% + 1.35 PLN
+domestic-personal-transactions,consumer,RUB,Cards,2.90% + 10.00 RUB
+domestic-personal-transactions,consumer,SGD,Cards,2.90% + 0.50 SGD
+domestic-personal-transactions,consumer,SEK,Cards,2.90% + 3.25 SEK
+domestic-personal-transactions,consumer,CHF,Cards,2.90% + 0.55 CHF
+domestic-personal-transactions,consumer,THB,Cards,2.90% + 11.00 THB
+domestic-personal-transactions,consumer,GBP,Cards,2.90% + 0.20 GBP
+domestic-personal-transactions,consumer,USD,Cards,2.90% + 0.30 USD
+merchant-crypto,merchant,USD,range,"if amount is between 1.00 - 74.99 USD, then 2.2%"
+merchant-crypto,merchant,USD,range,"if amount is between 75.00 – 200.00 USD, then 2%"
+merchant-crypto,merchant,USD,range,"if amount is between 200.01 – 1000.00 USD, then 1.8%"
+merchant-crypto,merchant,USD,range,"if amount is > 1000.01 USD, then 1.5%"
+recv-domestic-transactions,merchant,AUD,APM-Direct,2.89% + 0.39 AUD
+recv-domestic-transactions,merchant,BRL,APM-Direct,2.89% + 1.70 BRL
+recv-domestic-transactions,merchant,CAD,APM-Direct,2.89% + 0.39 CAD
+recv-domestic-transactions,merchant,CZK,APM-Direct,2.89% + 5.00 CZK
+recv-domestic-transactions,merchant,DKK,APM-Direct,2.89% + 1.70 DKK
+recv-domestic-transactions,merchant,EUR,APM-Direct,2.89% + 0.19 EUR
+recv-domestic-transactions,merchant,HKD,APM-Direct,2.89% + 2.29 HKD
+recv-domestic-transactions,merchant,HUF,APM-Direct,2.89% + 89.00 HUF
+recv-domestic-transactions,merchant,ILS,APM-Direct,2.89% + 0.90 ILS
+recv-domestic-transactions,merchant,JPY,APM-Direct,2.89% + 29.00 JPY
+recv-domestic-transactions,merchant,MYR,APM-Direct,2.89% + 1.20 MYR
+recv-domestic-transactions,merchant,MXN,APM-Direct,2.89% + 5.00 MXN
+recv-domestic-transactions,merchant,TWD,APM-Direct,2.89% + 8.00 TWD
+recv-domestic-transactions,merchant,NZD,APM-Direct,2.89% + 0.49 NZD
+recv-domestic-transactions,merchant,NOK,APM-Direct,2.89% + 2.30 NOK
+recv-domestic-transactions,merchant,PHP,APM-Direct,2.89% + 15.00 PHP
+recv-domestic-transactions,merchant,PLN,APM-Direct,2.89% + 1.09 PLN
+recv-domestic-transactions,merchant,RUB,APM-Direct,2.89% + 23.00 RUB
+recv-domestic-transactions,merchant,SGD,APM-Direct,2.89% + 0.49 SGD
+recv-domestic-transactions,merchant,SEK,APM-Direct,2.89% + 2.40 SEK
+recv-domestic-transactions,merchant,CHF,APM-Direct,2.89% + 0.29 CHF
+recv-domestic-transactions,merchant,THB,APM-Direct,2.89% + 9.00 THB
+recv-domestic-transactions,merchant,GBP,APM-Direct,2.89% + 0.19 GBP
+recv-domestic-transactions,merchant,USD,APM-Direct,2.89% + 0.29 USD
+recv-domestic-transactions,merchant,AUD,APM-Links,2.99% + 0.39 AUD
+recv-domestic-transactions,merchant,BRL,APM-Links,2.99% + 1.70 BRL
+recv-domestic-transactions,merchant,CAD,APM-Links,2.99% + 0.39 CAD
+recv-domestic-transactions,merchant,CZK,APM-Links,2.99% + 5.00 CZK
+recv-domestic-transactions,merchant,DKK,APM-Links,2.99% + 1.70 DKK
+recv-domestic-transactions,merchant,EUR,APM-Links,2.99% + 0.19 EUR
+recv-domestic-transactions,merchant,HKD,APM-Links,2.99% + 2.29 HKD
+recv-domestic-transactions,merchant,HUF,APM-Links,2.99% + 89.00 HUF
+recv-domestic-transactions,merchant,ILS,APM-Links,2.99% + 0.90 ILS
+recv-domestic-transactions,merchant,JPY,APM-Links,2.99% + 29.00 JPY
+recv-domestic-transactions,merchant,MYR,APM-Links,2.99% + 1.20 MYR
+recv-domestic-transactions,merchant,MXN,APM-Links,2.99% + 5.00 MXN
+recv-domestic-transactions,merchant,TWD,APM-Links,2.99% + 8.00 TWD
+recv-domestic-transactions,merchant,NZD,APM-Links,2.99% + 0.49 NZD
+recv-domestic-transactions,merchant,NOK,APM-Links,2.99% + 2.30 NOK
+recv-domestic-transactions,merchant,PHP,APM-Links,2.99% + 15.00 PHP
+recv-domestic-transactions,merchant,PLN,APM-Links,2.99% + 1.09 PLN
+recv-domestic-transactions,merchant,RUB,APM-Links,2.99% + 23.00 RUB
+recv-domestic-transactions,merchant,SGD,APM-Links,2.99% + 0.49 SGD
+recv-domestic-transactions,merchant,SEK,APM-Links,2.99% + 2.40 SEK
+recv-domestic-transactions,merchant,CHF,APM-Links,2.99% + 0.29 CHF
+recv-domestic-transactions,merchant,THB,APM-Links,2.99% + 9.00 THB
+recv-domestic-transactions,merchant,GBP,APM-Links,2.99% + 0.19 GBP
+recv-domestic-transactions,merchant,USD,APM-Links,2.99% + 0.29 USD
+recv-international-transactions,merchant,AUD,APM-Direct,2.89% + 1.50% + 0.39 AUD
+recv-international-transactions,merchant,BRL,APM-Direct,2.89% + 1.50% + 1.70 BRL
+recv-international-transactions,merchant,CAD,APM-Direct,2.89% + 1.50% + 0.39 CAD
+recv-international-transactions,merchant,CZK,APM-Direct,2.89% + 1.50% + 5.00 CZK
+recv-international-transactions,merchant,DKK,APM-Direct,2.89% + 1.50% + 1.70 DKK
+recv-international-transactions,merchant,EUR,APM-Direct,2.89% + 1.50% + 0.19 EUR
+recv-international-transactions,merchant,HKD,APM-Direct,2.89% + 1.50% + 2.29 HKD
+recv-international-transactions,merchant,HUF,APM-Direct,2.89% + 1.50% + 89.00 HUF
+recv-international-transactions,merchant,ILS,APM-Direct,2.89% + 1.50% + 0.90 ILS
+recv-international-transactions,merchant,JPY,APM-Direct,2.89% + 1.50% + 29.00 JPY
+recv-international-transactions,merchant,MYR,APM-Direct,2.89% + 1.50% + 1.20 MYR
+recv-international-transactions,merchant,MXN,APM-Direct,2.89% + 1.50% + 5.00 MXN
+recv-international-transactions,merchant,TWD,APM-Direct,2.89% + 1.50% + 8.00 TWD
+recv-international-transactions,merchant,NZD,APM-Direct,2.89% + 1.50% + 0.49 NZD
+recv-international-transactions,merchant,NOK,APM-Direct,2.89% + 1.50% + 2.30 NOK
+recv-international-transactions,merchant,PHP,APM-Direct,2.89% + 1.50% + 15.00 PHP
+recv-international-transactions,merchant,PLN,APM-Direct,2.89% + 1.50% + 1.09 PLN
+recv-international-transactions,merchant,RUB,APM-Direct,2.89% + 1.50% + 23.00 RUB
+recv-international-transactions,merchant,SGD,APM-Direct,2.89% + 1.50% + 0.49 SGD
+recv-international-transactions,merchant,SEK,APM-Direct,2.89% + 1.50% + 2.40 SEK
+recv-international-transactions,merchant,CHF,APM-Direct,2.89% + 1.50% + 0.29 CHF
+recv-international-transactions,merchant,THB,APM-Direct,2.89% + 1.50% + 9.00 THB
+recv-international-transactions,merchant,GBP,APM-Direct,2.89% + 1.50% + 0.19 GBP
+recv-international-transactions,merchant,USD,APM-Direct,2.89% + 1.50% + 0.29 USD
+recv-international-transactions,merchant,AUD,APM-Links,2.99% + 1.50% + 0.39 AUD
+recv-international-transactions,merchant,BRL,APM-Links,2.99% + 1.50% + 1.70 BRL
+recv-international-transactions,merchant,CAD,APM-Links,2.99% + 1.50% + 0.39 CAD
+recv-international-transactions,merchant,CZK,APM-Links,2.99% + 1.50% + 5.00 CZK
+recv-international-transactions,merchant,DKK,APM-Links,2.99% + 1.50% + 1.70 DKK
+recv-international-transactions,merchant,EUR,APM-Links,2.99% + 1.50% + 0.19 EUR
+recv-international-transactions,merchant,HKD,APM-Links,2.99% + 1.50% + 2.29 HKD
+recv-international-transactions,merchant,HUF,APM-Links,2.99% + 1.50% + 89.00 HUF
+recv-international-transactions,merchant,ILS,APM-Links,2.99% + 1.50% + 0.90 ILS
+recv-international-transactions,merchant,JPY,APM-Links,2.99% + 1.50% + 29.00 JPY
+recv-international-transactions,merchant,MYR,APM-Links,2.99% + 1.50% + 1.20 MYR
+recv-international-transactions,merchant,MXN,APM-Links,2.99% + 1.50% + 5.00 MXN
+recv-international-transactions,merchant,TWD,APM-Links,2.99% + 1.50% + 8.00 TWD
+recv-international-transactions,merchant,NZD,APM-Links,2.99% + 1.50% + 0.49 NZD
+recv-international-transactions,merchant,NOK,APM-Links,2.99% + 1.50% + 2.30 NOK
+recv-international-transactions,merchant,PHP,APM-Links,2.99% + 1.50% + 15.00 PHP
+recv-international-transactions,merchant,PLN,APM-Links,2.99% + 1.50% + 1.09 PLN
+recv-international-transactions,merchant,RUB,APM-Links,2.99% + 1.50% + 23.00 RUB
+recv-international-transactions,merchant,SGD,APM-Links,2.99% + 1.50% + 0.49 SGD
+recv-international-transactions,merchant,SEK,APM-Links,2.99% + 1.50% + 2.40 SEK
+recv-international-transactions,merchant,CHF,APM-Links,2.99% + 1.50% + 0.29 CHF
+recv-international-transactions,merchant,THB,APM-Links,2.99% + 1.50% + 9.00 THB
+recv-international-transactions,merchant,GBP,APM-Links,2.99% + 1.50% + 0.19 GBP
+recv-international-transactions,merchant,USD,APM-Links,2.99% + 1.50% + 0.29 USD
+recv-domestic-transactions,merchant,USD,QR-code-3p,2.29% + 0.09 USD
+recv-domestic-transactions,merchant,USD,G-and-S,2.99%
+recv-international-transactions,merchant,USD,QR-code-3p,2.29% + 1.5% + 0.09 USD
+recv-international-transactions,merchant,USD,G-and-S,2.99% +  1.5%
+recv-domestic-transactions,merchant,AUD,PayPal-Checkout,3.49% + 0.59 AUD
+recv-domestic-transactions,merchant,BRL,PayPal-Checkout,3.49% + 2.90 BRL
+recv-domestic-transactions,merchant,CAD,PayPal-Checkout,3.49% + 0.59 CAD
+recv-domestic-transactions,merchant,CZK,PayPal-Checkout,3.49% + 9.00 CZK
+recv-domestic-transactions,merchant,DKK,PayPal-Checkout,3.49% + 2.90 DKK
+recv-domestic-transactions,merchant,EUR,PayPal-Checkout,3.49% + 0.39 EUR
+recv-domestic-transactions,merchant,HKD,PayPal-Checkout,3.49% + 3.79 HKD
+recv-domestic-transactions,merchant,HUF,PayPal-Checkout,3.49% + 149.00 HUF
+recv-domestic-transactions,merchant,ILS,PayPal-Checkout,3.49% + 1.60 ILS
+recv-domestic-transactions,merchant,JPY,PayPal-Checkout,3.49% + 49.00 JPY
+recv-domestic-transactions,merchant,MYR,PayPal-Checkout,3.49% + 2.00 MYR
+recv-domestic-transactions,merchant,MXN,PayPal-Checkout,3.49% + 9.00 MXN
+recv-domestic-transactions,merchant,TWD,PayPal-Checkout,3.49% + 14.00 TWD
+recv-domestic-transactions,merchant,NZD,PayPal-Checkout,3.49% + 0.69 NZD
+recv-domestic-transactions,merchant,NOK,PayPal-Checkout,3.49% + 3.90 NOK
+recv-domestic-transactions,merchant,PHP,PayPal-Checkout,3.49% + 25.00 PHP
+recv-domestic-transactions,merchant,PLN,PayPal-Checkout,3.49% + 1.89 PLN
+recv-domestic-transactions,merchant,RUB,PayPal-Checkout,3.49% + 39.00 RUB
+recv-domestic-transactions,merchant,SGD,PayPal-Checkout,3.49% + 0.69 SGD
+recv-domestic-transactions,merchant,SEK,PayPal-Checkout,3.49% + 4.09 SEK
+recv-domestic-transactions,merchant,CHF,PayPal-Checkout,3.49% + 0.49 CHF
+recv-domestic-transactions,merchant,THB,PayPal-Checkout,3.49% + 15.00 THB
+recv-domestic-transactions,merchant,GBP,PayPal-Checkout,3.49% + 0.39 GBP
+recv-domestic-transactions,merchant,USD,PayPal-Checkout,3.49% + 0.49 USD
+recv-domestic-transactions,merchant,AUD,PayPal-Guest-Checkout,3.49% + 0.59 AUD
+recv-domestic-transactions,merchant,BRL,PayPal-Guest-Checkout,3.49% + 2.90 BRL
+recv-domestic-transactions,merchant,CAD,PayPal-Guest-Checkout,3.49% + 0.59 CAD
+recv-domestic-transactions,merchant,CZK,PayPal-Guest-Checkout,3.49% + 9.00 CZK
+recv-domestic-transactions,merchant,DKK,PayPal-Guest-Checkout,3.49% + 2.90 DKK
+recv-domestic-transactions,merchant,EUR,PayPal-Guest-Checkout,3.49% + 0.39 EUR
+recv-domestic-transactions,merchant,HKD,PayPal-Guest-Checkout,3.49% + 3.79 HKD
+recv-domestic-transactions,merchant,HUF,PayPal-Guest-Checkout,3.49% + 149.00 HUF
+recv-domestic-transactions,merchant,ILS,PayPal-Guest-Checkout,3.49% + 1.60 ILS
+recv-domestic-transactions,merchant,JPY,PayPal-Guest-Checkout,3.49% + 49.00 JPY
+recv-domestic-transactions,merchant,MYR,PayPal-Guest-Checkout,3.49% + 2.00 MYR
+recv-domestic-transactions,merchant,MXN,PayPal-Guest-Checkout,3.49% + 9.00 MXN
+recv-domestic-transactions,merchant,TWD,PayPal-Guest-Checkout,3.49% + 14.00 TWD
+recv-domestic-transactions,merchant,NZD,PayPal-Guest-Checkout,3.49% + 0.69 NZD
+recv-domestic-transactions,merchant,NOK,PayPal-Guest-Checkout,3.49% + 3.90 NOK
+recv-domestic-transactions,merchant,PHP,PayPal-Guest-Checkout,3.49% + 25.00 PHP
+recv-domestic-transactions,merchant,PLN,PayPal-Guest-Checkout,3.49% + 1.89 PLN
+recv-domestic-transactions,merchant,RUB,PayPal-Guest-Checkout,3.49% + 39.00 RUB
+recv-domestic-transactions,merchant,SGD,PayPal-Guest-Checkout,3.49% + 0.69 SGD
+recv-domestic-transactions,merchant,SEK,PayPal-Guest-Checkout,3.49% + 4.09 SEK
+recv-domestic-transactions,merchant,CHF,PayPal-Guest-Checkout,3.49% + 0.49 CHF
+recv-domestic-transactions,merchant,THB,PayPal-Guest-Checkout,3.49% + 15.00 THB
+recv-domestic-transactions,merchant,GBP,PayPal-Guest-Checkout,3.49% + 0.39 GBP
+recv-domestic-transactions,merchant,USD,PayPal-Guest-Checkout,3.49% + 0.49 USD
+recv-domestic-transactions,merchant,AUD,QR-code-Transactions,2.29% + 0.12 AUD
+recv-domestic-transactions,merchant,BRL,QR-code-Transactions,2.29% + 0.50 BRL
+recv-domestic-transactions,merchant,CAD,QR-code-Transactions,2.29% + 0.11 CAD
+recv-domestic-transactions,merchant,CZK,QR-code-Transactions,2.29% + 1.90 CZK
+recv-domestic-transactions,merchant,DKK,QR-code-Transactions,2.29% + 0.56 DKK
+recv-domestic-transactions,merchant,EUR,QR-code-Transactions,2.29% + 0.07 EUR
+recv-domestic-transactions,merchant,HKD,QR-code-Transactions,2.29% + 0.70 HKD
+recv-domestic-transactions,merchant,HUF,QR-code-Transactions,2.29% + 29.00 HUF
+recv-domestic-transactions,merchant,ILS,QR-code-Transactions,2.29% + 0.30 ILS
+recv-domestic-transactions,merchant,JPY,QR-code-Transactions,2.29% + 9.00 JPY
+recv-domestic-transactions,merchant,MYR,QR-code-Transactions,2.29% + 0.40 MYR
+recv-domestic-transactions,merchant,MXN,QR-code-Transactions,2.29% + 1.79 MXN
+recv-domestic-transactions,merchant,TWD,QR-code-Transactions,2.29% + 3.00 TWD
+recv-domestic-transactions,merchant,NZD,QR-code-Transactions,2.29% + 0.13 NZD
+recv-domestic-transactions,merchant,NOK,QR-code-Transactions,2.29% + 0.77 NOK
+recv-domestic-transactions,merchant,PHP,QR-code-Transactions,2.29% + 4.40 PHP
+recv-domestic-transactions,merchant,PLN,QR-code-Transactions,2.29% + 0.34 PLN
+recv-domestic-transactions,merchant,RUB,QR-code-Transactions,2.29% + 6.90 RUB
+recv-domestic-transactions,merchant,SGD,QR-code-Transactions,2.29% + 0.12 SGD
+recv-domestic-transactions,merchant,SEK,QR-code-Transactions,2.29% + 0.76 SEK
+recv-domestic-transactions,merchant,CHF,QR-code-Transactions,2.29% + 0.08 CHF
+recv-domestic-transactions,merchant,THB,QR-code-Transactions,2.29% + 2.90 THB
+recv-domestic-transactions,merchant,GBP,QR-code-Transactions,2.29% + 0.07 GBP
+recv-domestic-transactions,merchant,USD,QR-code-Transactions,2.29% + 0.09 USD
+recv-domestic-transactions,merchant,AUD,Pay-Venmo,3.49% + 0.59 AUD
+recv-domestic-transactions,merchant,BRL,Pay-Venmo,3.49% + 2.90 BRL
+recv-domestic-transactions,merchant,CAD,Pay-Venmo,3.49% + 0.59 CAD
+recv-domestic-transactions,merchant,CZK,Pay-Venmo,3.49% + 9.00 CZK
+recv-domestic-transactions,merchant,DKK,Pay-Venmo,3.49% + 2.90 DKK
+recv-domestic-transactions,merchant,EUR,Pay-Venmo,3.49% + 0.39 EUR
+recv-domestic-transactions,merchant,HKD,Pay-Venmo,3.49% + 3.79 HKD
+recv-domestic-transactions,merchant,HUF,Pay-Venmo,3.49% + 149.00 HUF
+recv-domestic-transactions,merchant,ILS,Pay-Venmo,3.49% + 1.60 ILS
+recv-domestic-transactions,merchant,JPY,Pay-Venmo,3.49% + 49.00 JPY
+recv-domestic-transactions,merchant,MYR,Pay-Venmo,3.49% + 2.00 MYR
+recv-domestic-transactions,merchant,MXN,Pay-Venmo,3.49% + 9.00 MXN
+recv-domestic-transactions,merchant,TWD,Pay-Venmo,3.49% + 14.00 TWD
+recv-domestic-transactions,merchant,NZD,Pay-Venmo,3.49% + 0.69 NZD
+recv-domestic-transactions,merchant,NOK,Pay-Venmo,3.49% + 3.90 NOK
+recv-domestic-transactions,merchant,PHP,Pay-Venmo,3.49% + 25.00 PHP
+recv-domestic-transactions,merchant,PLN,Pay-Venmo,3.49% + 1.89 PLN
+recv-domestic-transactions,merchant,RUB,Pay-Venmo,3.49% + 39.00 RUB
+recv-domestic-transactions,merchant,SGD,Pay-Venmo,3.49% + 0.69 SGD
+recv-domestic-transactions,merchant,SEK,Pay-Venmo,3.49% + 4.09 SEK
+recv-domestic-transactions,merchant,CHF,Pay-Venmo,3.49% + 0.49 CHF
+recv-domestic-transactions,merchant,THB,Pay-Venmo,3.49% + 15.00 THB
+recv-domestic-transactions,merchant,GBP,Pay-Venmo,3.49% + 0.39 GBP
+recv-domestic-transactions,merchant,USD,Pay-Venmo,3.49% + 0.49 USD
+recv-domestic-transactions,merchant,AUD,Standard-Credit-Debit-Card,2.99% + 0.59 AUD
+recv-domestic-transactions,merchant,BRL,Standard-Credit-Debit-Card,2.99% + 2.90 BRL
+recv-domestic-transactions,merchant,CAD,Standard-Credit-Debit-Card,2.99% + 0.59 CAD
+recv-domestic-transactions,merchant,CZK,Standard-Credit-Debit-Card,2.99% + 9.00 CZK
+recv-domestic-transactions,merchant,DKK,Standard-Credit-Debit-Card,2.99% + 2.90 DKK
+recv-domestic-transactions,merchant,EUR,Standard-Credit-Debit-Card,2.99% + 0.39 EUR
+recv-domestic-transactions,merchant,HKD,Standard-Credit-Debit-Card,2.99% + 3.79 HKD
+recv-domestic-transactions,merchant,HUF,Standard-Credit-Debit-Card,2.99% + 149.00 HUF
+recv-domestic-transactions,merchant,ILS,Standard-Credit-Debit-Card,2.99% + 1.60 ILS
+recv-domestic-transactions,merchant,JPY,Standard-Credit-Debit-Card,2.99% + 49.00 JPY
+recv-domestic-transactions,merchant,MYR,Standard-Credit-Debit-Card,2.99% + 2.00 MYR
+recv-domestic-transactions,merchant,MXN,Standard-Credit-Debit-Card,2.99% + 9.00 MXN
+recv-domestic-transactions,merchant,TWD,Standard-Credit-Debit-Card,2.99% + 14.00 TWD
+recv-domestic-transactions,merchant,NZD,Standard-Credit-Debit-Card,2.99% + 0.69 NZD
+recv-domestic-transactions,merchant,NOK,Standard-Credit-Debit-Card,2.99% + 3.90 NOK
+recv-domestic-transactions,merchant,PHP,Standard-Credit-Debit-Card,2.99% + 25.00 PHP
+recv-domestic-transactions,merchant,PLN,Standard-Credit-Debit-Card,2.99% + 1.89 PLN
+recv-domestic-transactions,merchant,RUB,Standard-Credit-Debit-Card,2.99% + 39.00 RUB
+recv-domestic-transactions,merchant,SGD,Standard-Credit-Debit-Card,2.99% + 0.69 SGD
+recv-domestic-transactions,merchant,SEK,Standard-Credit-Debit-Card,2.99% + 4.09 SEK
+recv-domestic-transactions,merchant,CHF,Standard-Credit-Debit-Card,2.99% + 0.49 CHF
+recv-domestic-transactions,merchant,THB,Standard-Credit-Debit-Card,2.99% + 15.00 THB
+recv-domestic-transactions,merchant,GBP,Standard-Credit-Debit-Card,2.99% + 0.39 GBP
+recv-domestic-transactions,merchant,USD,Standard-Credit-Debit-Card,2.99% + 0.49 USD
+recv-domestic-transactions,merchant,AUD,PayPal-Pay-Later,4.99% + 0.59 AUD
+recv-domestic-transactions,merchant,BRL,PayPal-Pay-Later,4.99% + 2.90 BRL
+recv-domestic-transactions,merchant,CAD,PayPal-Pay-Later,4.99% + 0.59 CAD
+recv-domestic-transactions,merchant,CZK,PayPal-Pay-Later,4.99% + 9.00 CZK
+recv-domestic-transactions,merchant,DKK,PayPal-Pay-Later,4.99% + 2.90 DKK
+recv-domestic-transactions,merchant,EUR,PayPal-Pay-Later,4.99% + 0.39 EUR
+recv-domestic-transactions,merchant,HKD,PayPal-Pay-Later,4.99% + 3.79 HKD
+recv-domestic-transactions,merchant,HUF,PayPal-Pay-Later,4.99% + 149.00 HUF
+recv-domestic-transactions,merchant,ILS,PayPal-Pay-Later,4.99% + 1.60 ILS
+recv-domestic-transactions,merchant,JPY,PayPal-Pay-Later,4.99% + 49.00 JPY
+recv-domestic-transactions,merchant,MYR,PayPal-Pay-Later,4.99% + 2.00 MYR
+recv-domestic-transactions,merchant,MXN,PayPal-Pay-Later,4.99% + 9.00 MXN
+recv-domestic-transactions,merchant,TWD,PayPal-Pay-Later,4.99% + 14.00 TWD
+recv-domestic-transactions,merchant,NZD,PayPal-Pay-Later,4.99% + 0.69 NZD
+recv-domestic-transactions,merchant,NOK,PayPal-Pay-Later,4.99% + 3.90 NOK
+recv-domestic-transactions,merchant,PHP,PayPal-Pay-Later,4.99% + 25.00 PHP
+recv-domestic-transactions,merchant,PLN,PayPal-Pay-Later,4.99% + 1.89 PLN
+recv-domestic-transactions,merchant,RUB,PayPal-Pay-Later,4.99% + 39.00 RUB
+recv-domestic-transactions,merchant,SGD,PayPal-Pay-Later,4.99% + 0.69 SGD
+recv-domestic-transactions,merchant,SEK,PayPal-Pay-Later,4.99% + 4.09 SEK
+recv-domestic-transactions,merchant,CHF,PayPal-Pay-Later,4.99% + 0.49 CHF
+recv-domestic-transactions,merchant,THB,PayPal-Pay-Later,4.99% + 15.00 THB
+recv-domestic-transactions,merchant,GBP,PayPal-Pay-Later,4.99% + 0.39 GBP
+recv-domestic-transactions,merchant,USD,PayPal-Pay-Later,4.99% + 0.49 USD
+recv-domestic-transactions,merchant,AUD,All-Other-Commercial-Transactions,3.49% + 0.59 AUD
+recv-domestic-transactions,merchant,BRL,All-Other-Commercial-Transactions,3.49% + 2.90 BRL
+recv-domestic-transactions,merchant,CAD,All-Other-Commercial-Transactions,3.49% + 0.59 CAD
+recv-domestic-transactions,merchant,CZK,All-Other-Commercial-Transactions,3.49% + 9.00 CZK
+recv-domestic-transactions,merchant,DKK,All-Other-Commercial-Transactions,3.49% + 2.90 DKK
+recv-domestic-transactions,merchant,EUR,All-Other-Commercial-Transactions,3.49% + 0.39 EUR
+recv-domestic-transactions,merchant,HKD,All-Other-Commercial-Transactions,3.49% + 3.79 HKD
+recv-domestic-transactions,merchant,HUF,All-Other-Commercial-Transactions,3.49% + 149.00 HUF
+recv-domestic-transactions,merchant,ILS,All-Other-Commercial-Transactions,3.49% + 1.60 ILS
+recv-domestic-transactions,merchant,JPY,All-Other-Commercial-Transactions,3.49% + 49.00 JPY
+recv-domestic-transactions,merchant,MYR,All-Other-Commercial-Transactions,3.49% + 2.00 MYR
+recv-domestic-transactions,merchant,MXN,All-Other-Commercial-Transactions,3.49% + 9.00 MXN
+recv-domestic-transactions,merchant,TWD,All-Other-Commercial-Transactions,3.49% + 14.00 TWD
+recv-domestic-transactions,merchant,NZD,All-Other-Commercial-Transactions,3.49% + 0.69 NZD
+recv-domestic-transactions,merchant,NOK,All-Other-Commercial-Transactions,3.49% + 3.90 NOK
+recv-domestic-transactions,merchant,PHP,All-Other-Commercial-Transactions,3.49% + 25.00 PHP
+recv-domestic-transactions,merchant,PLN,All-Other-Commercial-Transactions,3.49% + 1.89 PLN
+recv-domestic-transactions,merchant,RUB,All-Other-Commercial-Transactions,3.49% + 39.00 RUB
+recv-domestic-transactions,merchant,SGD,All-Other-Commercial-Transactions,3.49% + 0.69 SGD
+recv-domestic-transactions,merchant,SEK,All-Other-Commercial-Transactions,3.49% + 4.09 SEK
+recv-domestic-transactions,merchant,CHF,All-Other-Commercial-Transactions,3.49% + 0.49 CHF
+recv-domestic-transactions,merchant,THB,All-Other-Commercial-Transactions,3.49% + 15.00 THB
+recv-domestic-transactions,merchant,GBP,All-Other-Commercial-Transactions,3.49% + 0.39 GBP
+recv-domestic-transactions,merchant,USD,All-Other-Commercial-Transactions,3.49% + 0.49 USD
+recv-international-transactions,merchant,AUD,PayPal-Checkout,3.49% + 1.50% + 0.59 AUD
+recv-international-transactions,merchant,BRL,PayPal-Checkout,3.49% + 1.50% + 2.90 BRL
+recv-international-transactions,merchant,CAD,PayPal-Checkout,3.49% + 1.50% + 0.59 CAD
+recv-international-transactions,merchant,CZK,PayPal-Checkout,3.49% + 1.50% + 9.00 CZK
+recv-international-transactions,merchant,DKK,PayPal-Checkout,3.49% + 1.50% + 2.90 DKK
+recv-international-transactions,merchant,EUR,PayPal-Checkout,3.49% + 1.50% + 0.39 EUR
+recv-international-transactions,merchant,HKD,PayPal-Checkout,3.49% + 1.50% + 3.79 HKD
+recv-international-transactions,merchant,HUF,PayPal-Checkout,3.49% + 1.50% + 149.00 HUF
+recv-international-transactions,merchant,ILS,PayPal-Checkout,3.49% + 1.50% + 1.60 ILS
+recv-international-transactions,merchant,JPY,PayPal-Checkout,3.49% + 1.50% + 49.00 JPY
+recv-international-transactions,merchant,MYR,PayPal-Checkout,3.49% + 1.50% + 2.00 MYR
+recv-international-transactions,merchant,MXN,PayPal-Checkout,3.49% + 1.50% + 9.00 MXN
+recv-international-transactions,merchant,TWD,PayPal-Checkout,3.49% + 1.50% + 14.00 TWD
+recv-international-transactions,merchant,NZD,PayPal-Checkout,3.49% + 1.50% + 0.69 NZD
+recv-international-transactions,merchant,NOK,PayPal-Checkout,3.49% + 1.50% + 3.90 NOK
+recv-international-transactions,merchant,PHP,PayPal-Checkout,3.49% + 1.50% + 25.00 PHP
+recv-international-transactions,merchant,PLN,PayPal-Checkout,3.49% + 1.50% + 1.89 PLN
+recv-international-transactions,merchant,RUB,PayPal-Checkout,3.49% + 1.50% + 39.00 RUB
+recv-international-transactions,merchant,SGD,PayPal-Checkout,3.49% + 1.50% + 0.69 SGD
+recv-international-transactions,merchant,SEK,PayPal-Checkout,3.49% + 1.50% + 4.09 SEK
+recv-international-transactions,merchant,CHF,PayPal-Checkout,3.49% + 1.50% + 0.49 CHF
+recv-international-transactions,merchant,THB,PayPal-Checkout,3.49% + 1.50% + 15.00 THB
+recv-international-transactions,merchant,GBP,PayPal-Checkout,3.49% + 1.50% + 0.39 GBP
+recv-international-transactions,merchant,USD,PayPal-Checkout,3.49% + 1.50% + 0.49 USD
+recv-international-transactions,merchant,AUD,PayPal-Guest-Checkout,3.49% + 1.50% + 0.59 AUD
+recv-international-transactions,merchant,BRL,PayPal-Guest-Checkout,3.49% + 1.50% + 2.90 BRL
+recv-international-transactions,merchant,CAD,PayPal-Guest-Checkout,3.49% + 1.50% + 0.59 CAD
+recv-international-transactions,merchant,CZK,PayPal-Guest-Checkout,3.49% + 1.50% + 9.00 CZK
+recv-international-transactions,merchant,DKK,PayPal-Guest-Checkout,3.49% + 1.50% + 2.90 DKK
+recv-international-transactions,merchant,EUR,PayPal-Guest-Checkout,3.49% + 1.50% + 0.39 EUR
+recv-international-transactions,merchant,HKD,PayPal-Guest-Checkout,3.49% + 1.50% + 3.79 HKD
+recv-international-transactions,merchant,HUF,PayPal-Guest-Checkout,3.49% + 1.50% + 149.00 HUF
+recv-international-transactions,merchant,ILS,PayPal-Guest-Checkout,3.49% + 1.50% + 1.60 ILS
+recv-international-transactions,merchant,JPY,PayPal-Guest-Checkout,3.49% + 1.50% + 49.00 JPY
+recv-international-transactions,merchant,MYR,PayPal-Guest-Checkout,3.49% + 1.50% + 2.00 MYR
+recv-international-transactions,merchant,MXN,PayPal-Guest-Checkout,3.49% + 1.50% + 9.00 MXN
+recv-international-transactions,merchant,TWD,PayPal-Guest-Checkout,3.49% + 1.50% + 14.00 TWD
+recv-international-transactions,merchant,NZD,PayPal-Guest-Checkout,3.49% + 1.50% + 0.69 NZD
+recv-international-transactions,merchant,NOK,PayPal-Guest-Checkout,3.49% + 1.50% + 3.90 NOK
+recv-international-transactions,merchant,PHP,PayPal-Guest-Checkout,3.49% + 1.50% + 25.00 PHP
+recv-international-transactions,merchant,PLN,PayPal-Guest-Checkout,3.49% + 1.50% + 1.89 PLN
+recv-international-transactions,merchant,RUB,PayPal-Guest-Checkout,3.49% + 1.50% + 39.00 RUB
+recv-international-transactions,merchant,SGD,PayPal-Guest-Checkout,3.49% + 1.50% + 0.69 SGD
+recv-international-transactions,merchant,SEK,PayPal-Guest-Checkout,3.49% + 1.50% + 4.09 SEK
+recv-international-transactions,merchant,CHF,PayPal-Guest-Checkout,3.49% + 1.50% + 0.49 CHF
+recv-international-transactions,merchant,THB,PayPal-Guest-Checkout,3.49% + 1.50% + 15.00 THB
+recv-international-transactions,merchant,GBP,PayPal-Guest-Checkout,3.49% + 1.50% + 0.39 GBP
+recv-international-transactions,merchant,USD,PayPal-Guest-Checkout,3.49% + 1.50% + 0.49 USD
+recv-international-transactions,merchant,AUD,QR-code-Transactions,2.29% + 1.50% + 0.12 AUD
+recv-international-transactions,merchant,BRL,QR-code-Transactions,2.29% + 1.50% + 0.50 BRL
+recv-international-transactions,merchant,CAD,QR-code-Transactions,2.29% + 1.50% + 0.11 CAD
+recv-international-transactions,merchant,CZK,QR-code-Transactions,2.29% + 1.50% + 1.90 CZK
+recv-international-transactions,merchant,DKK,QR-code-Transactions,2.29% + 1.50% + 0.56 DKK
+recv-international-transactions,merchant,EUR,QR-code-Transactions,2.29% + 1.50% + 0.07 EUR
+recv-international-transactions,merchant,HKD,QR-code-Transactions,2.29% + 1.50% + 0.70 HKD
+recv-international-transactions,merchant,HUF,QR-code-Transactions,2.29% + 1.50% + 29.00 HUF
+recv-international-transactions,merchant,ILS,QR-code-Transactions,2.29% + 1.50% + 0.30 ILS
+recv-international-transactions,merchant,JPY,QR-code-Transactions,2.29% + 1.50% + 9.00 JPY
+recv-international-transactions,merchant,MYR,QR-code-Transactions,2.29% + 1.50% + 0.40 MYR
+recv-international-transactions,merchant,MXN,QR-code-Transactions,2.29% + 1.50% + 1.79 MXN
+recv-international-transactions,merchant,TWD,QR-code-Transactions,2.29% + 1.50% + 3.00 TWD
+recv-international-transactions,merchant,NZD,QR-code-Transactions,2.29% + 1.50% + 0.13 NZD
+recv-international-transactions,merchant,NOK,QR-code-Transactions,2.29% + 1.50% + 0.77 NOK
+recv-international-transactions,merchant,PHP,QR-code-Transactions,2.29% + 1.50% + 4.40 PHP
+recv-international-transactions,merchant,PLN,QR-code-Transactions,2.29% + 1.50% + 0.34 PLN
+recv-international-transactions,merchant,RUB,QR-code-Transactions,2.29% + 1.50% + 6.90 RUB
+recv-international-transactions,merchant,SGD,QR-code-Transactions,2.29% + 1.50% + 0.12 SGD
+recv-international-transactions,merchant,SEK,QR-code-Transactions,2.29% + 1.50% + 0.76 SEK
+recv-international-transactions,merchant,CHF,QR-code-Transactions,2.29% + 1.50% + 0.08 CHF
+recv-international-transactions,merchant,THB,QR-code-Transactions,2.29% + 1.50% + 2.90 THB
+recv-international-transactions,merchant,GBP,QR-code-Transactions,2.29% + 1.50% + 0.07 GBP
+recv-international-transactions,merchant,USD,QR-code-Transactions,2.29% + 1.50% + 0.09 USD
+recv-international-transactions,merchant,AUD,Pay-Venmo,3.49% + 1.50% + 0.59 AUD
+recv-international-transactions,merchant,BRL,Pay-Venmo,3.49% + 1.50% + 2.90 BRL
+recv-international-transactions,merchant,CAD,Pay-Venmo,3.49% + 1.50% + 0.59 CAD
+recv-international-transactions,merchant,CZK,Pay-Venmo,3.49% + 1.50% + 9.00 CZK
+recv-international-transactions,merchant,DKK,Pay-Venmo,3.49% + 1.50% + 2.90 DKK
+recv-international-transactions,merchant,EUR,Pay-Venmo,3.49% + 1.50% + 0.39 EUR
+recv-international-transactions,merchant,HKD,Pay-Venmo,3.49% + 1.50% + 3.79 HKD
+recv-international-transactions,merchant,HUF,Pay-Venmo,3.49% + 1.50% + 149.00 HUF
+recv-international-transactions,merchant,ILS,Pay-Venmo,3.49% + 1.50% + 1.60 ILS
+recv-international-transactions,merchant,JPY,Pay-Venmo,3.49% + 1.50% + 49.00 JPY
+recv-international-transactions,merchant,MYR,Pay-Venmo,3.49% + 1.50% + 2.00 MYR
+recv-international-transactions,merchant,MXN,Pay-Venmo,3.49% + 1.50% + 9.00 MXN
+recv-international-transactions,merchant,TWD,Pay-Venmo,3.49% + 1.50% + 14.00 TWD
+recv-international-transactions,merchant,NZD,Pay-Venmo,3.49% + 1.50% + 0.69 NZD
+recv-international-transactions,merchant,NOK,Pay-Venmo,3.49% + 1.50% + 3.90 NOK
+recv-international-transactions,merchant,PHP,Pay-Venmo,3.49% + 1.50% + 25.00 PHP
+recv-international-transactions,merchant,PLN,Pay-Venmo,3.49% + 1.50% + 1.89 PLN
+recv-international-transactions,merchant,RUB,Pay-Venmo,3.49% + 1.50% + 39.00 RUB
+recv-international-transactions,merchant,SGD,Pay-Venmo,3.49% + 1.50% + 0.69 SGD
+recv-international-transactions,merchant,SEK,Pay-Venmo,3.49% + 1.50% + 4.09 SEK
+recv-international-transactions,merchant,CHF,Pay-Venmo,3.49% + 1.50% + 0.49 CHF
+recv-international-transactions,merchant,THB,Pay-Venmo,3.49% + 1.50% + 15.00 THB
+recv-international-transactions,merchant,GBP,Pay-Venmo,3.49% + 1.50% + 0.39 GBP
+recv-international-transactions,merchant,USD,Pay-Venmo,3.49% + 1.50% + 0.49 USD
+recv-international-transactions,merchant,AUD,Standard-Credit-Debit-Card,2.99% + 1.50% + 0.59 AUD
+recv-international-transactions,merchant,BRL,Standard-Credit-Debit-Card,2.99% + 1.50% + 2.90 BRL
+recv-international-transactions,merchant,CAD,Standard-Credit-Debit-Card,2.99% + 1.50% + 0.59 CAD
+recv-international-transactions,merchant,CZK,Standard-Credit-Debit-Card,2.99% + 1.50% + 9.00 CZK
+recv-international-transactions,merchant,DKK,Standard-Credit-Debit-Card,2.99% + 1.50% + 2.90 DKK
+recv-international-transactions,merchant,EUR,Standard-Credit-Debit-Card,2.99% + 1.50% + 0.39 EUR
+recv-international-transactions,merchant,HKD,Standard-Credit-Debit-Card,2.99% + 1.50% + 3.79 HKD
+recv-international-transactions,merchant,HUF,Standard-Credit-Debit-Card,2.99% + 1.50% + 149.00 HUF
+recv-international-transactions,merchant,ILS,Standard-Credit-Debit-Card,2.99% + 1.50% + 1.60 ILS
+recv-international-transactions,merchant,JPY,Standard-Credit-Debit-Card,2.99% + 1.50% + 49.00 JPY
+recv-international-transactions,merchant,MYR,Standard-Credit-Debit-Card,2.99% + 1.50% + 2.00 MYR
+recv-international-transactions,merchant,MXN,Standard-Credit-Debit-Card,2.99% + 1.50% + 9.00 MXN
+recv-international-transactions,merchant,TWD,Standard-Credit-Debit-Card,2.99% + 1.50% + 14.00 TWD
+recv-international-transactions,merchant,NZD,Standard-Credit-Debit-Card,2.99% + 1.50% + 0.69 NZD
+recv-international-transactions,merchant,NOK,Standard-Credit-Debit-Card,2.99% + 1.50% + 3.90 NOK
+recv-international-transactions,merchant,PHP,Standard-Credit-Debit-Card,2.99% + 1.50% + 25.00 PHP
+recv-international-transactions,merchant,PLN,Standard-Credit-Debit-Card,2.99% + 1.50% + 1.89 PLN
+recv-international-transactions,merchant,RUB,Standard-Credit-Debit-Card,2.99% + 1.50% + 39.00 RUB
+recv-international-transactions,merchant,SGD,Standard-Credit-Debit-Card,2.99% + 1.50% + 0.69 SGD
+recv-international-transactions,merchant,SEK,Standard-Credit-Debit-Card,2.99% + 1.50% + 4.09 SEK
+recv-international-transactions,merchant,CHF,Standard-Credit-Debit-Card,2.99% + 1.50% + 0.49 CHF
+recv-international-transactions,merchant,THB,Standard-Credit-Debit-Card,2.99% + 1.50% + 15.00 THB
+recv-international-transactions,merchant,GBP,Standard-Credit-Debit-Card,2.99% + 1.50% + 0.39 GBP
+recv-international-transactions,merchant,USD,Standard-Credit-Debit-Card,2.99% + 1.50% + 0.49 USD
+recv-international-transactions,merchant,AUD,PayPal-Pay-Later,4.99% + 1.50% + 0.59 AUD
+recv-international-transactions,merchant,BRL,PayPal-Pay-Later,4.99% + 1.50% + 2.90 BRL
+recv-international-transactions,merchant,CAD,PayPal-Pay-Later,4.99% + 1.50% + 0.59 CAD
+recv-international-transactions,merchant,CZK,PayPal-Pay-Later,4.99% + 1.50% + 9.00 CZK
+recv-international-transactions,merchant,DKK,PayPal-Pay-Later,4.99% + 1.50% + 2.90 DKK
+recv-international-transactions,merchant,EUR,PayPal-Pay-Later,4.99% + 1.50% + 0.39 EUR
+recv-international-transactions,merchant,HKD,PayPal-Pay-Later,4.99% + 1.50% + 3.79 HKD
+recv-international-transactions,merchant,HUF,PayPal-Pay-Later,4.99% + 1.50% + 149.00 HUF
+recv-international-transactions,merchant,ILS,PayPal-Pay-Later,4.99% + 1.50% + 1.60 ILS
+recv-international-transactions,merchant,JPY,PayPal-Pay-Later,4.99% + 1.50% + 49.00 JPY
+recv-international-transactions,merchant,MYR,PayPal-Pay-Later,4.99% + 1.50% + 2.00 MYR
+recv-international-transactions,merchant,MXN,PayPal-Pay-Later,4.99% + 1.50% + 9.00 MXN
+recv-international-transactions,merchant,TWD,PayPal-Pay-Later,4.99% + 1.50% + 14.00 TWD
+recv-international-transactions,merchant,NZD,PayPal-Pay-Later,4.99% + 1.50% + 0.69 NZD
+recv-international-transactions,merchant,NOK,PayPal-Pay-Later,4.99% + 1.50% + 3.90 NOK
+recv-international-transactions,merchant,PHP,PayPal-Pay-Later,4.99% + 1.50% + 25.00 PHP
+recv-international-transactions,merchant,PLN,PayPal-Pay-Later,4.99% + 1.50% + 1.89 PLN
+recv-international-transactions,merchant,RUB,PayPal-Pay-Later,4.99% + 1.50% + 39.00 RUB
+recv-international-transactions,merchant,SGD,PayPal-Pay-Later,4.99% + 1.50% + 0.69 SGD
+recv-international-transactions,merchant,SEK,PayPal-Pay-Later,4.99% + 1.50% + 4.09 SEK
+recv-international-transactions,merchant,CHF,PayPal-Pay-Later,4.99% + 1.50% + 0.49 CHF
+recv-international-transactions,merchant,THB,PayPal-Pay-Later,4.99% + 1.50% + 15.00 THB
+recv-international-transactions,merchant,GBP,PayPal-Pay-Later,4.99% + 1.50% + 0.39 GBP
+recv-international-transactions,merchant,USD,PayPal-Pay-Later,4.99% + 1.50% + 0.49 USD
+recv-international-transactions,merchant,AUD,All-Other-Commercial-Transactions,3.49% + 1.50% + 0.59 AUD
+recv-international-transactions,merchant,BRL,All-Other-Commercial-Transactions,3.49% + 1.50% + 2.90 BRL
+recv-international-transactions,merchant,CAD,All-Other-Commercial-Transactions,3.49% + 1.50% + 0.59 CAD
+recv-international-transactions,merchant,CZK,All-Other-Commercial-Transactions,3.49% + 1.50% + 9.00 CZK
+recv-international-transactions,merchant,DKK,All-Other-Commercial-Transactions,3.49% + 1.50% + 2.90 DKK
+recv-international-transactions,merchant,EUR,All-Other-Commercial-Transactions,3.49% + 1.50% + 0.39 EUR
+recv-international-transactions,merchant,HKD,All-Other-Commercial-Transactions,3.49% + 1.50% + 3.79 HKD
+recv-international-transactions,merchant,HUF,All-Other-Commercial-Transactions,3.49% + 1.50% + 149.00 HUF
+recv-international-transactions,merchant,ILS,All-Other-Commercial-Transactions,3.49% + 1.50% + 1.60 ILS
+recv-international-transactions,merchant,JPY,All-Other-Commercial-Transactions,3.49% + 1.50% + 49.00 JPY
+recv-international-transactions,merchant,MYR,All-Other-Commercial-Transactions,3.49% + 1.50% + 2.00 MYR
+recv-international-transactions,merchant,MXN,All-Other-Commercial-Transactions,3.49% + 1.50% + 9.00 MXN
+recv-international-transactions,merchant,TWD,All-Other-Commercial-Transactions,3.49% + 1.50% + 14.00 TWD
+recv-international-transactions,merchant,NZD,All-Other-Commercial-Transactions,3.49% + 1.50% + 0.69 NZD
+recv-international-transactions,merchant,NOK,All-Other-Commercial-Transactions,3.49% + 1.50% + 3.90 NOK
+recv-international-transactions,merchant,PHP,All-Other-Commercial-Transactions,3.49% + 1.50% + 25.00 PHP
+recv-international-transactions,merchant,PLN,All-Other-Commercial-Transactions,3.49% + 1.50% + 1.89 PLN
+recv-international-transactions,merchant,RUB,All-Other-Commercial-Transactions,3.49% + 1.50% + 39.00 RUB
+recv-international-transactions,merchant,SGD,All-Other-Commercial-Transactions,3.49% + 1.50% + 0.69 SGD
+recv-international-transactions,merchant,SEK,All-Other-Commercial-Transactions,3.49% + 1.50% + 4.09 SEK
+recv-international-transactions,merchant,CHF,All-Other-Commercial-Transactions,3.49% + 1.50% + 0.49 CHF
+recv-international-transactions,merchant,THB,All-Other-Commercial-Transactions,3.49% + 1.50% + 15.00 THB
+recv-international-transactions,merchant,GBP,All-Other-Commercial-Transactions,3.49% + 1.50% + 0.39 GBP
+recv-international-transactions,merchant,USD,All-Other-Commercial-Transactions,3.49% + 1.50% + 0.49 USD
