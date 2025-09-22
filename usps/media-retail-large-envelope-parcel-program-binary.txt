@@ -1,0 +1,103 @@
+if w <= 35 then
+    if w <= 17 then
+        if w <= 8 then
+            if w <= 4 then
+                if w <= 2 then
+                    if w <= 1 then 4.47 else 5.22
+                else
+                    if w <= 3 then 5.97 else 6.72
+            else
+                if w <= 6 then
+                    if w <= 5 then 7.47 else 8.22
+                else
+                    if w <= 7 then 8.97 else 9.72
+        else
+            if w <= 12 then
+                if w <= 10 then
+                    if w <= 9 then 10.47 else 11.22
+                else
+                    if w <= 11 then 11.97 else 12.72
+            else
+                if w <= 14 then
+                    if w <= 13 then 13.47 else 14.22
+                else
+                    if w <= 15 then 14.97 else
+                        if w <= 16 then 15.72 else 16.47
+    else
+        if w <= 26 then
+            if w <= 21 then
+                if w <= 19 then
+                    if w <= 18 then 17.22 else 17.97
+                else
+                    if w <= 20 then 18.72 else 19.47
+            else
+                if w <= 23 then
+                    if w <= 22 then 20.22 else 20.97
+                else
+                    if w <= 24 then 21.72 else
+                        if w <= 25 then 22.47 else 23.22
+        else
+            if w <= 30 then
+                if w <= 28 then
+                    if w <= 27 then 23.97 else 24.72
+                else
+                    if w <= 29 then 25.47 else 26.22
+            else
+                if w <= 32 then
+                    if w <= 31 then 26.97 else 27.72
+                else
+                    if w <= 33 then 28.47 else
+                        if w <= 34 then 29.22 else 29.97
+else
+    if w <= 53 then
+        if w <= 44 then
+            if w <= 40 then
+                if w <= 38 then
+                    if w <= 36 then
+                        if w <= 35 then 29.97 else 30.72
+                    else
+                        if w <= 37 then 31.47 else 32.22
+                else
+                    if w <= 39 then 32.97 else 33.72
+            else
+                if w <= 42 then
+                    if w <= 41 then 34.47 else 35.22
+                else
+                    if w <= 43 then 35.97 else 36.72
+        else
+            if w <= 48 then
+                if w <= 46 then
+                    if w <= 45 then 37.47 else 38.22
+                else
+                    if w <= 47 then 38.97 else 39.72
+            else
+                if w <= 50 then
+                    if w <= 49 then 40.47 else 41.22
+                else
+                    if w <= 51 then 41.97 else
+                        if w <= 52 then 42.72 else 43.47
+    else
+        if w <= 62 then
+            if w <= 57 then
+                if w <= 55 then
+                    if w <= 54 then 44.22 else 44.97
+                else
+                    if w <= 56 then 45.72 else 46.47
+            else
+                if w <= 59 then
+                    if w <= 58 then 47.22 else 47.97
+                else
+                    if w <= 60 then 48.72 else
+                        if w <= 61 then 49.47 else 50.22
+        else
+            if w <= 66 then
+                if w <= 64 then
+                    if w <= 63 then 50.97 else 51.72
+                else
+                    if w <= 65 then 52.47 else 53.22
+            else
+                if w <= 68 then
+                    if w <= 67 then 53.97 else 54.72
+                else
+                    if w <= 69 then 55.47 else
+                        if w <= 70 then 56.22
