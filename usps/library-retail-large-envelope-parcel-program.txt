@@ -1,4 +1,3 @@
-let w = <input weight>
 if w <= 1 then 4.25 else
 if w <= 2 then 4.96 else
 if w <= 3 then 5.67 else
@@ -68,5 +67,4 @@ if w <= 66 then 50.56 else
 if w <= 67 then 51.27 else
 if w <= 68 then 51.98 else
 if w <= 69 then 52.70 else
-if w <= 70 then 53.41 else
-error
+if w <= 70 then 53.41
