@@ -20,8 +20,8 @@ def serializedATN():
         0,0,10,55,1,0,0,0,12,77,1,0,0,0,14,15,3,2,1,0,15,1,1,0,0,0,16,17,
         3,8,4,0,17,18,3,2,1,0,18,21,1,0,0,0,19,21,3,8,4,0,20,16,1,0,0,0,
         20,19,1,0,0,0,21,3,1,0,0,0,22,23,5,1,0,0,23,24,3,8,4,0,24,25,5,16,
-        0,0,25,26,3,8,4,0,26,27,5,2,0,0,27,28,3,8,4,0,28,29,5,3,0,0,29,30,
-        3,8,4,0,30,5,1,0,0,0,31,32,5,4,0,0,32,33,5,14,0,0,33,34,5,5,0,0,
+        0,0,25,26,3,8,4,0,26,27,5,2,0,0,27,28,3,2,1,0,28,29,5,3,0,0,29,30,
+        3,2,1,0,30,5,1,0,0,0,31,32,5,4,0,0,32,33,5,14,0,0,33,34,5,5,0,0,
         34,40,3,8,4,0,35,36,5,4,0,0,36,37,5,14,0,0,37,38,5,5,0,0,38,40,5,
         6,0,0,39,31,1,0,0,0,39,35,1,0,0,0,40,7,1,0,0,0,41,42,6,4,-1,0,42,
         43,3,10,5,0,43,52,1,0,0,0,44,45,10,3,0,0,45,46,5,7,0,0,46,51,3,10,
@@ -227,6 +227,13 @@ class LangParser ( Parser ):
         def COMP(self):
             return self.getToken(LangParser.COMP, 0)
 
+        def exprs(self, i:int=None):
+            if i is None:
+                return self.getTypedRuleContexts(LangParser.ExprsContext)
+            else:
+                return self.getTypedRuleContext(LangParser.ExprsContext,i)
+
+
         def getRuleIndex(self):
             return LangParser.RULE_if
 
@@ -264,11 +271,11 @@ class LangParser ( Parser ):
             self.state = 26
             self.match(LangParser.T__1)
             self.state = 27
-            self.expr(0)
+            self.exprs()
             self.state = 28
             self.match(LangParser.T__2)
             self.state = 29
-            self.expr(0)
+            self.exprs()
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)

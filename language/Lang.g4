@@ -3,7 +3,7 @@ prog:   exprs ;
 exprs:  expr exprs
     |   expr
     ;
-if: 'if' expr COMP expr 'then' expr 'else' expr;
+if: 'if' expr COMP expr 'then' exprs 'else' exprs;
 assign:     'let' IDENTIFIER '=' expr
         |   'let' IDENTIFIER '=' '<input>'
         ;

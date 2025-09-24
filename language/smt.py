@@ -4,6 +4,33 @@ from parser.LangParser import LangParser
 from antlr4 import *
 
 
+class DeclarationVisitor(LangVisitor):
+    def defaultResult(self) -> set[str]:
+        return set()
+
+    def aggregateResult(self, aggregate: set[str], nextResult: set[str]):
+        if len(aggregate.intersection(nextResult)) > 0:
+            raise ValueError(
+                f"repeated definition of variables {aggregate.intersection(nextResult)}"
+            )
+
+        return aggregate.union(nextResult)
+
+    def visitAssign(self, ctx: LangParser.AssignContext):
+        variable_name = ctx.children[1].symbol.text
+        return {variable_name}
+
+    def visitIf(self, ctx: LangParser.IfContext):
+        # assert no variables in the condition
+        if (
+            len(self.visitExpr(ctx.children[1])) != 0
+            or len(self.visitExpr(ctx.children[3])) != 0
+        ):
+            raise ValueError("cannot declare variables in condition")
+
+        return self.visitExpr(ctx.children[5]).union(self.visitExpr(ctx.children[7]))
+
+
 class SMTVisitor(LangVisitor):
     def defaultResult(self):
         return ""
@@ -87,9 +114,9 @@ class SMTVisitor(LangVisitor):
         text += " "
         text += self.visitExpr(ctx.children[3])
         text += ") "
-        text += self.visitExpr(ctx.children[5])
+        text += self.visitExprs(ctx.children[5])
         text += " "
-        text += self.visitExpr(ctx.children[7])
+        text += self.visitExprs(ctx.children[7])
 
         text += ")"
 
@@ -97,10 +124,26 @@ class SMTVisitor(LangVisitor):
 
     def visitAssign(self, ctx: LangParser.AssignContext):
         variable_name = ctx.children[1].symbol.text
-        text = f"(declare-const {variable_name} Real)\n"
+        # text = f"(declare-const {variable_name} Real)\n"
+        text = ""
         if not isinstance(ctx.children[-1], TerminalNode):
             text += f"(assert (= {variable_name} "
             text += self.visitExpr(ctx.children[-1])
             text += "))"
 
         return text
+
+
+def generate_code(tree: LangParser.ProgContext):
+    declaration_visitor = DeclarationVisitor()
+    variables = declaration_visitor.visit(tree)
+
+    text = ""
+
+    for variable in variables:
+        text += f"(declare-const {variable} Real)\n"
+
+    smt_visitor = SMTVisitor()
+    text += smt_visitor.visit(tree)
+
+    return text

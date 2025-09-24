@@ -3,7 +3,7 @@ import sys
 from antlr4 import *
 from parser.LangLexer import LangLexer
 from parser.LangParser import LangParser
-from smt import SMTVisitor
+from smt import generate_code
 
 
 def main(argv):
@@ -14,9 +14,7 @@ def main(argv):
 
     with open("out.prog", "w") as output:
         tree = parser.prog()
-        visitor = SMTVisitor()
-        output.write(visitor.visit(tree))
-        pass
+        output.write(generate_code(tree))
 
 
 if __name__ == "__main__":
