@@ -1,0 +1,10 @@
+weight = <input>
+fee = if weight <= 1 then (4.47) else (
+    if weight <= 2 then (5.22) else (
+        if weight <= 3 then (5.97) else (
+            if weight <= 4 then (6.72) else (
+                if weight <= 5 then (7.47)
+            )
+        )
+    )
+)
