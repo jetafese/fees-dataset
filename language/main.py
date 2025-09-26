@@ -6,6 +6,7 @@ from parser.LangParser import LangParser
 from smt import generate_code
 
 
+# antlr4 -Dlanguage=Python3 Lang.g4 -o parser -visitor
 def main(argv):
     input = FileStream(argv[1])
     lexer = LangLexer(input)

@@ -14,13 +14,8 @@ class LangVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by LangParser#exprs.
-    def visitExprs(self, ctx:LangParser.ExprsContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by LangParser#if.
-    def visitIf(self, ctx:LangParser.IfContext):
+    # Visit a parse tree produced by LangParser#assigns.
+    def visitAssigns(self, ctx:LangParser.AssignsContext):
         return self.visitChildren(ctx)
 
 
@@ -41,6 +36,11 @@ class LangVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by LangParser#unaryexpr.
     def visitUnaryexpr(self, ctx:LangParser.UnaryexprContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by LangParser#if.
+    def visitIf(self, ctx:LangParser.IfContext):
         return self.visitChildren(ctx)
 
 

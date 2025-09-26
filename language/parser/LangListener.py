@@ -17,21 +17,12 @@ class LangListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by LangParser#exprs.
-    def enterExprs(self, ctx:LangParser.ExprsContext):
+    # Enter a parse tree produced by LangParser#assigns.
+    def enterAssigns(self, ctx:LangParser.AssignsContext):
         pass
 
-    # Exit a parse tree produced by LangParser#exprs.
-    def exitExprs(self, ctx:LangParser.ExprsContext):
-        pass
-
-
-    # Enter a parse tree produced by LangParser#if.
-    def enterIf(self, ctx:LangParser.IfContext):
-        pass
-
-    # Exit a parse tree produced by LangParser#if.
-    def exitIf(self, ctx:LangParser.IfContext):
+    # Exit a parse tree produced by LangParser#assigns.
+    def exitAssigns(self, ctx:LangParser.AssignsContext):
         pass
 
 
@@ -68,6 +59,15 @@ class LangListener(ParseTreeListener):
 
     # Exit a parse tree produced by LangParser#unaryexpr.
     def exitUnaryexpr(self, ctx:LangParser.UnaryexprContext):
+        pass
+
+
+    # Enter a parse tree produced by LangParser#if.
+    def enterIf(self, ctx:LangParser.IfContext):
+        pass
+
+    # Exit a parse tree produced by LangParser#if.
+    def exitIf(self, ctx:LangParser.IfContext):
         pass
 
 

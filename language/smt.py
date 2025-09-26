@@ -20,16 +20,6 @@ class DeclarationVisitor(LangVisitor):
         variable_name = ctx.children[1].symbol.text
         return {variable_name}
 
-    def visitIf(self, ctx: LangParser.IfContext):
-        # assert no variables in the condition
-        if (
-            len(self.visitExpr(ctx.children[1])) != 0
-            or len(self.visitExpr(ctx.children[3])) != 0
-        ):
-            raise ValueError("cannot declare variables in condition")
-
-        return self.visitExpr(ctx.children[5]).union(self.visitExpr(ctx.children[7]))
-
 
 class SMTVisitor(LangVisitor):
     def defaultResult(self):
@@ -40,7 +30,7 @@ class SMTVisitor(LangVisitor):
             return aggregate + nextResult
         return aggregate + " " + nextResult
 
-    def visitExprs(self, ctx: LangParser.ExprsContext) -> str:
+    def visitAssigns(self, ctx: LangParser.AssignsContext) -> str:
         return self.visitChildren(ctx)
 
     def visitExpr(self, ctx: LangParser.ExprContext):
@@ -114,9 +104,9 @@ class SMTVisitor(LangVisitor):
         text += " "
         text += self.visitExpr(ctx.children[3])
         text += ") "
-        text += self.visitExprs(ctx.children[5])
+        text += self.visitExpr(ctx.children[5])
         text += " "
-        text += self.visitExprs(ctx.children[7])
+        text += self.visitExpr(ctx.children[7])
 
         text += ")"
 
@@ -145,5 +135,6 @@ def generate_code(tree: LangParser.ProgContext):
 
     smt_visitor = SMTVisitor()
     text += smt_visitor.visit(tree)
+    text += "\n(check-sat)\n(get-model)"
 
     return text
