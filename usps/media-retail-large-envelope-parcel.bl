@@ -1,3 +1,5 @@
+let w = <input>
+let max = <input>
 if w <= 1 then 4.47 else
 if w <= 2 then 5.22 else
 if w <= 3 then 5.97 else
@@ -67,4 +69,4 @@ if w <= 66 then 53.22 else
 if w <= 67 then 53.97 else
 if w <= 68 then 54.72 else
 if w <= 69 then 55.47 else
-if w <= 70 then 56.22
+if w <= 70 then 56.22 else max
