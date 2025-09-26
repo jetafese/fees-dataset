@@ -98,7 +98,7 @@ class SMTVisitor(BLVisitor):
         text = "(ite ("
 
         comp: str = ctx.children[2].symbol.text
-        text += comp
+        text += "=" if comp == "==" else comp
         text += " "
         text += self.visitExpr(ctx.children[1])
         text += " "
