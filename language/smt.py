@@ -1,6 +1,6 @@
-from parser.BLVisitor import BLVisitor
-from parser.BLListener import BLListener
-from parser.BLParser import BLParser
+from bl.BLVisitor import BLVisitor
+from bl.BLListener import BLListener
+from bl.BLParser import BLParser
 from antlr4 import *
 
 

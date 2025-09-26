@@ -1,12 +1,12 @@
 import sys
 
 from antlr4 import *
-from parser.BLLexer import BLLexer
-from parser.BLParser import BLParser
+from bl.BLLexer import BLLexer
+from bl.BLParser import BLParser
 from smt import generate_code
 
 
-# antlr4 -Dlanguage=Python3 BL.g4 -o parser -visitor
+# antlr4 -Dlanguage=Python3 BL.g4 -o bl -visitor
 def main(argv):
     input = FileStream(argv[1])
     lexer = BLLexer(input)
