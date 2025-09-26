@@ -128,7 +128,7 @@ def generate_code(tree: BLParser.ProgContext):
     declaration_visitor = DeclarationVisitor()
     variables = declaration_visitor.visit(tree)
 
-    text = ""
+    text = "(set-logic  QF_LRA)\n"
 
     for variable in variables:
         text += f"(declare-const {variable} Real)\n"
