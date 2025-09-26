@@ -13,7 +13,7 @@ def main(argv):
     stream = CommonTokenStream(lexer)
     parser = BLParser(stream)
 
-    with open("out.prog", "w") as output:
+    with open("out.smt2", "w") as output:
         tree = parser.prog()
         output.write(generate_code(tree))
 

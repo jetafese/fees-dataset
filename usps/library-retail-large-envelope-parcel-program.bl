@@ -1,4 +1,6 @@
-if w <= 1 then 4.25 else
+let w = <input>
+let max = <input>
+let fee = if w <= 1 then 4.25 else
 if w <= 2 then 4.96 else
 if w <= 3 then 5.67 else
 if w <= 4 then 6.38 else
@@ -67,4 +69,4 @@ if w <= 66 then 50.56 else
 if w <= 67 then 51.27 else
 if w <= 68 then 51.98 else
 if w <= 69 then 52.70 else
-if w <= 70 then 53.41
+if w <= 70 then 53.41 else max

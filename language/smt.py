@@ -135,6 +135,5 @@ def generate_code(tree: BLParser.ProgContext):
 
     smt_visitor = SMTVisitor()
     text += smt_visitor.visit(tree)
-    text += "\n(check-sat)\n(get-model)"
 
     return text
