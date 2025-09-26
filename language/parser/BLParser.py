@@ -1,4 +1,4 @@
-# Generated from Lang.g4 by ANTLR 4.13.2
+# Generated from BL.g4 by ANTLR 4.13.2
 # encoding: utf-8
 from antlr4 import *
 from io import StringIO
@@ -30,9 +30,9 @@ def serializedATN():
         56,57,5,12,0,0,57,58,3,6,3,0,58,13,1,0,0,0,5,19,29,34,39,48
     ]
 
-class LangParser ( Parser ):
+class BLParser ( Parser ):
 
-    grammarFileName = "Lang.g4"
+    grammarFileName = "BL.g4"
 
     atn = ATNDeserializer().deserialize(serializedATN())
 
@@ -96,11 +96,11 @@ class LangParser ( Parser ):
             self.parser = parser
 
         def assigns(self):
-            return self.getTypedRuleContext(LangParser.AssignsContext,0)
+            return self.getTypedRuleContext(BLParser.AssignsContext,0)
 
 
         def getRuleIndex(self):
-            return LangParser.RULE_prog
+            return BLParser.RULE_prog
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterProg" ):
@@ -121,7 +121,7 @@ class LangParser ( Parser ):
 
     def prog(self):
 
-        localctx = LangParser.ProgContext(self, self._ctx, self.state)
+        localctx = BLParser.ProgContext(self, self._ctx, self.state)
         self.enterRule(localctx, 0, self.RULE_prog)
         try:
             self.enterOuterAlt(localctx, 1)
@@ -145,13 +145,13 @@ class LangParser ( Parser ):
 
         def assign(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(LangParser.AssignContext)
+                return self.getTypedRuleContexts(BLParser.AssignContext)
             else:
-                return self.getTypedRuleContext(LangParser.AssignContext,i)
+                return self.getTypedRuleContext(BLParser.AssignContext,i)
 
 
         def getRuleIndex(self):
-            return LangParser.RULE_assigns
+            return BLParser.RULE_assigns
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterAssigns" ):
@@ -172,7 +172,7 @@ class LangParser ( Parser ):
 
     def assigns(self):
 
-        localctx = LangParser.AssignsContext(self, self._ctx, self.state)
+        localctx = BLParser.AssignsContext(self, self._ctx, self.state)
         self.enterRule(localctx, 2, self.RULE_assigns)
         self._la = 0 # Token type
         try:
@@ -206,14 +206,14 @@ class LangParser ( Parser ):
             self.parser = parser
 
         def IDENTIFIER(self):
-            return self.getToken(LangParser.IDENTIFIER, 0)
+            return self.getToken(BLParser.IDENTIFIER, 0)
 
         def expr(self):
-            return self.getTypedRuleContext(LangParser.ExprContext,0)
+            return self.getTypedRuleContext(BLParser.ExprContext,0)
 
 
         def getRuleIndex(self):
-            return LangParser.RULE_assign
+            return BLParser.RULE_assign
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterAssign" ):
@@ -234,7 +234,7 @@ class LangParser ( Parser ):
 
     def assign(self):
 
-        localctx = LangParser.AssignContext(self, self._ctx, self.state)
+        localctx = BLParser.AssignContext(self, self._ctx, self.state)
         self.enterRule(localctx, 4, self.RULE_assign)
         try:
             self.state = 29
@@ -243,11 +243,11 @@ class LangParser ( Parser ):
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 21
-                self.match(LangParser.T__0)
+                self.match(BLParser.T__0)
                 self.state = 22
-                self.match(LangParser.IDENTIFIER)
+                self.match(BLParser.IDENTIFIER)
                 self.state = 23
-                self.match(LangParser.T__1)
+                self.match(BLParser.T__1)
                 self.state = 24
                 self.expr()
                 pass
@@ -255,13 +255,13 @@ class LangParser ( Parser ):
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 25
-                self.match(LangParser.T__0)
+                self.match(BLParser.T__0)
                 self.state = 26
-                self.match(LangParser.IDENTIFIER)
+                self.match(BLParser.IDENTIFIER)
                 self.state = 27
-                self.match(LangParser.T__1)
+                self.match(BLParser.T__1)
                 self.state = 28
-                self.match(LangParser.T__2)
+                self.match(BLParser.T__2)
                 pass
 
 
@@ -283,13 +283,13 @@ class LangParser ( Parser ):
 
         def multexpr(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(LangParser.MultexprContext)
+                return self.getTypedRuleContexts(BLParser.MultexprContext)
             else:
-                return self.getTypedRuleContext(LangParser.MultexprContext,i)
+                return self.getTypedRuleContext(BLParser.MultexprContext,i)
 
 
         def getRuleIndex(self):
-            return LangParser.RULE_expr
+            return BLParser.RULE_expr
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterExpr" ):
@@ -310,7 +310,7 @@ class LangParser ( Parser ):
 
     def expr(self):
 
-        localctx = LangParser.ExprContext(self, self._ctx, self.state)
+        localctx = BLParser.ExprContext(self, self._ctx, self.state)
         self.enterRule(localctx, 6, self.RULE_expr)
         self._la = 0 # Token type
         try:
@@ -350,13 +350,13 @@ class LangParser ( Parser ):
 
         def unaryexpr(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(LangParser.UnaryexprContext)
+                return self.getTypedRuleContexts(BLParser.UnaryexprContext)
             else:
-                return self.getTypedRuleContext(LangParser.UnaryexprContext,i)
+                return self.getTypedRuleContext(BLParser.UnaryexprContext,i)
 
 
         def getRuleIndex(self):
-            return LangParser.RULE_multexpr
+            return BLParser.RULE_multexpr
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterMultexpr" ):
@@ -377,7 +377,7 @@ class LangParser ( Parser ):
 
     def multexpr(self):
 
-        localctx = LangParser.MultexprContext(self, self._ctx, self.state)
+        localctx = BLParser.MultexprContext(self, self._ctx, self.state)
         self.enterRule(localctx, 8, self.RULE_multexpr)
         self._la = 0 # Token type
         try:
@@ -416,21 +416,21 @@ class LangParser ( Parser ):
             self.parser = parser
 
         def NUMBER(self):
-            return self.getToken(LangParser.NUMBER, 0)
+            return self.getToken(BLParser.NUMBER, 0)
 
         def IDENTIFIER(self):
-            return self.getToken(LangParser.IDENTIFIER, 0)
+            return self.getToken(BLParser.IDENTIFIER, 0)
 
         def expr(self):
-            return self.getTypedRuleContext(LangParser.ExprContext,0)
+            return self.getTypedRuleContext(BLParser.ExprContext,0)
 
 
         def if_(self):
-            return self.getTypedRuleContext(LangParser.IfContext,0)
+            return self.getTypedRuleContext(BLParser.IfContext,0)
 
 
         def getRuleIndex(self):
-            return LangParser.RULE_unaryexpr
+            return BLParser.RULE_unaryexpr
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterUnaryexpr" ):
@@ -451,7 +451,7 @@ class LangParser ( Parser ):
 
     def unaryexpr(self):
 
-        localctx = LangParser.UnaryexprContext(self, self._ctx, self.state)
+        localctx = BLParser.UnaryexprContext(self, self._ctx, self.state)
         self.enterRule(localctx, 10, self.RULE_unaryexpr)
         try:
             self.state = 48
@@ -460,21 +460,21 @@ class LangParser ( Parser ):
             if token in [13]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 41
-                self.match(LangParser.NUMBER)
+                self.match(BLParser.NUMBER)
                 pass
             elif token in [14]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 42
-                self.match(LangParser.IDENTIFIER)
+                self.match(BLParser.IDENTIFIER)
                 pass
             elif token in [8]:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 43
-                self.match(LangParser.T__7)
+                self.match(BLParser.T__7)
                 self.state = 44
                 self.expr()
                 self.state = 45
-                self.match(LangParser.T__8)
+                self.match(BLParser.T__8)
                 pass
             elif token in [10]:
                 self.enterOuterAlt(localctx, 4)
@@ -502,16 +502,16 @@ class LangParser ( Parser ):
 
         def expr(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(LangParser.ExprContext)
+                return self.getTypedRuleContexts(BLParser.ExprContext)
             else:
-                return self.getTypedRuleContext(LangParser.ExprContext,i)
+                return self.getTypedRuleContext(BLParser.ExprContext,i)
 
 
         def COMP(self):
-            return self.getToken(LangParser.COMP, 0)
+            return self.getToken(BLParser.COMP, 0)
 
         def getRuleIndex(self):
-            return LangParser.RULE_if
+            return BLParser.RULE_if
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterIf" ):
@@ -532,24 +532,24 @@ class LangParser ( Parser ):
 
     def if_(self):
 
-        localctx = LangParser.IfContext(self, self._ctx, self.state)
+        localctx = BLParser.IfContext(self, self._ctx, self.state)
         self.enterRule(localctx, 12, self.RULE_if)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 50
-            self.match(LangParser.T__9)
+            self.match(BLParser.T__9)
             self.state = 51
             self.expr()
             self.state = 52
-            self.match(LangParser.COMP)
+            self.match(BLParser.COMP)
             self.state = 53
             self.expr()
             self.state = 54
-            self.match(LangParser.T__10)
+            self.match(BLParser.T__10)
             self.state = 55
             self.expr()
             self.state = 56
-            self.match(LangParser.T__11)
+            self.match(BLParser.T__11)
             self.state = 57
             self.expr()
         except RecognitionException as re:

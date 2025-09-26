@@ -1,10 +1,10 @@
-from parser.LangVisitor import LangVisitor
-from parser.LangListener import LangListener
-from parser.LangParser import LangParser
+from parser.BLVisitor import BLVisitor
+from parser.BLListener import BLListener
+from parser.BLParser import BLParser
 from antlr4 import *
 
 
-class DeclarationVisitor(LangVisitor):
+class DeclarationVisitor(BLVisitor):
     def defaultResult(self) -> set[str]:
         return set()
 
@@ -16,12 +16,12 @@ class DeclarationVisitor(LangVisitor):
 
         return aggregate.union(nextResult)
 
-    def visitAssign(self, ctx: LangParser.AssignContext):
+    def visitAssign(self, ctx: BLParser.AssignContext):
         variable_name = ctx.children[1].symbol.text
         return {variable_name}
 
 
-class SMTVisitor(LangVisitor):
+class SMTVisitor(BLVisitor):
     def defaultResult(self):
         return ""
 
@@ -30,10 +30,10 @@ class SMTVisitor(LangVisitor):
             return aggregate + nextResult
         return aggregate + " " + nextResult
 
-    def visitAssigns(self, ctx: LangParser.AssignsContext) -> str:
+    def visitAssigns(self, ctx: BLParser.AssignsContext) -> str:
         return self.visitChildren(ctx)
 
-    def visitExpr(self, ctx: LangParser.ExprContext):
+    def visitExpr(self, ctx: BLParser.ExprContext):
         if len(ctx.children) == 1:
             return self.visitChildren(ctx)
 
@@ -52,7 +52,7 @@ class SMTVisitor(LangVisitor):
 
         return text
 
-    def visitMultexpr(self, ctx: LangParser.MultexprContext):
+    def visitMultexpr(self, ctx: BLParser.MultexprContext):
         if len(ctx.children) == 1:
             return self.visitChildren(ctx)
 
@@ -71,28 +71,28 @@ class SMTVisitor(LangVisitor):
 
         return text
 
-    def visitUnaryexpr(self, ctx: LangParser.UnaryexprContext):
+    def visitUnaryexpr(self, ctx: BLParser.UnaryexprContext):
         if isinstance(ctx.children[0], TerminalNode):
             child_type = ctx.children[0].symbol.type
             # unaryexpr -> NUMBER
             # unaryexpr -> IDENTIFIER
-            if child_type == LangParser.NUMBER or child_type == LangParser.IDENTIFIER:
+            if child_type == BLParser.NUMBER or child_type == BLParser.IDENTIFIER:
                 value: str = ctx.children[0].symbol.text
                 return value
 
             # unaryexpr -> ( expr )
-            elif child_type == LangParser.literalNames.index("'('"):
+            elif child_type == BLParser.literalNames.index("'('"):
                 return self.visitChildren(ctx)
             else:
                 assert False
 
         # unaryexpr -> if
-        elif isinstance(ctx.children[0], LangParser.IfContext) or isinstance(
-            ctx.children[0], LangParser.AssignContext
+        elif isinstance(ctx.children[0], BLParser.IfContext) or isinstance(
+            ctx.children[0], BLParser.AssignContext
         ):
             return self.visitChildren(ctx)
 
-    def visitIf(self, ctx: LangParser.IfContext):
+    def visitIf(self, ctx: BLParser.IfContext):
         #  if -> if expr COMP expr then expr else expr;
 
         text = "(ite ("
@@ -112,7 +112,7 @@ class SMTVisitor(LangVisitor):
 
         return text
 
-    def visitAssign(self, ctx: LangParser.AssignContext):
+    def visitAssign(self, ctx: BLParser.AssignContext):
         variable_name = ctx.children[1].symbol.text
         # text = f"(declare-const {variable_name} Real)\n"
         text = ""
@@ -124,7 +124,7 @@ class SMTVisitor(LangVisitor):
         return text
 
 
-def generate_code(tree: LangParser.ProgContext):
+def generate_code(tree: BLParser.ProgContext):
     declaration_visitor = DeclarationVisitor()
     variables = declaration_visitor.visit(tree)
 

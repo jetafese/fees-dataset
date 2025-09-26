@@ -1,4 +1,4 @@
-# Generated from Lang.g4 by ANTLR 4.13.2
+# Generated from BL.g4 by ANTLR 4.13.2
 from antlr4 import *
 from io import StringIO
 import sys
@@ -50,7 +50,7 @@ def serializedATN():
         84,90,102,1,6,0,0
     ]
 
-class LangLexer(Lexer):
+class BLLexer(Lexer):
 
     atn = ATNDeserializer().deserialize(serializedATN())
 
@@ -89,7 +89,7 @@ class LangLexer(Lexer):
                   "T__7", "T__8", "T__9", "T__10", "T__11", "NUMBER", "IDENTIFIER", 
                   "OP", "COMP", "WHITESPACE" ]
 
-    grammarFileName = "Lang.g4"
+    grammarFileName = "BL.g4"
 
     def __init__(self, input=None, output:TextIO = sys.stdout):
         super().__init__(input, output)

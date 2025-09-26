@@ -1,17 +1,17 @@
 import sys
 
 from antlr4 import *
-from parser.LangLexer import LangLexer
-from parser.LangParser import LangParser
+from parser.BLLexer import BLLexer
+from parser.BLParser import BLParser
 from smt import generate_code
 
 
-# antlr4 -Dlanguage=Python3 Lang.g4 -o parser -visitor
+# antlr4 -Dlanguage=Python3 BL.g4 -o parser -visitor
 def main(argv):
     input = FileStream(argv[1])
-    lexer = LangLexer(input)
+    lexer = BLLexer(input)
     stream = CommonTokenStream(lexer)
-    parser = LangParser(stream)
+    parser = BLParser(stream)
 
     with open("out.prog", "w") as output:
         tree = parser.prog()

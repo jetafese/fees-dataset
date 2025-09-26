@@ -1,4 +1,4 @@
-grammar Lang;
+grammar BL;
 
 prog: assigns ;
 assigns : (assign)+ ;
