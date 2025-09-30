@@ -1,9 +1,9 @@
 (set-logic  QF_LIRA)
 (declare-const weight Real)
-(declare-const fee Real)
+(declare-const fee_bl Real)
 (declare-const MAX Real)
 
-(assert (= fee
+(assert (= fee_bl
     (ite
         (<= weight 1)
         4.47

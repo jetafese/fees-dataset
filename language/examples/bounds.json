@@ -1,7 +1,16 @@
 [
     {
-        "variable": "weight",
+        "type": "range",
+        "variables": ["weigh"],
         "min": 0,
         "max": 5
+    },
+    {
+        "type": "equals",
+        "variables": ["fee_nl", "fee_bl"]
+    },
+    {
+        "type": "equals",
+        "variables": ["weight", "weigh"]
     }
 ]

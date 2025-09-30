@@ -8,8 +8,8 @@ from z3 import *
 
 class VariableBounds(typing.TypedDict):
     variable: str
-    min: typing.NotRequired[float]
-    max: typing.NotRequired[float]
+    min: typing.NotRequired[float | str]
+    max: typing.NotRequired[float | str]
 
 
 DECLARATION_REGEX = r"\(declare-const\s+(.+)\s+Real\)"
@@ -37,22 +37,38 @@ def extract_variables(smt2_string: str):
     return variables
 
 
-def extract_bound_assumptions(bounds: list[VariableBounds], variables: set[str]):
+def extract_assumptions(bounds: list[dict], variables: set[str]):
     bound_assumptions_list = []
+    output_assumptions_list = []
 
     for bound in bounds:
-        assert (
-            bound["variable"] in variables
-        ), f"variable {bound['variable']} not found in SMT formulations"
-        variable = z3.Real(bound["variable"])
+        if bound["type"] == "range":
+            for variable_name in bound["variables"]:
+                assert (
+                    variable_name in variables
+                ), f"variable {variable_name} not found in SMT formulations"
+                variable = z3.Real(variable_name)
 
-        if "min" in bound:
-            bound_assumptions_list.append(variable >= bound["min"])
-        if "max" in bound:
-            bound_assumptions_list.append(variable <= bound["max"])
+                if "min" in bound:
+                    bound_assumptions_list.append(variable >= bound["min"])
+                if "max" in bound:
+                    bound_assumptions_list.append(variable <= bound["max"])
 
-    bound_assumptions = And(bound_assumptions_list)
-    return bound_assumptions
+        elif bound["type"] == "equals":
+            variable_0 = z3.Real(bound["variables"][0])
+
+            for i in range(1, len(bound["variables"])):
+                variable_i = z3.Real(bound["variables"][i])
+                bound_assumptions_list.append(variable_0 == variable_i)
+
+        elif bound["type"] == "outputs":
+            variable_0 = z3.Real(bound["variables"][0])
+
+            for i in range(1, len(bound["variables"])):
+                variable_i = z3.Real(bound["variables"][i])
+                output_assumptions_list.append(variable_0 == variable_i)
+
+    return And(bound_assumptions_list), And(output_assumptions_list)
 
 
 def check_equivalence(file1, file2, bounds_file):
@@ -66,11 +82,12 @@ def check_equivalence(file1, file2, bounds_file):
 
     if bounds_file is None:
         bound_assumptions = And()
+        output_assumptions = And()
     else:
         with open(bounds_file, "r") as f:
             bounds: list[VariableBounds] = json.load(f)
 
-        bound_assumptions = extract_bound_assumptions(bounds, variables)
+        bound_assumptions, output_assumptions = extract_assumptions(bounds, variables)
 
     # Convert to Z3 ASTs
     f1 = parse_smt2_string(smt1)
@@ -81,19 +98,24 @@ def check_equivalence(file1, file2, bounds_file):
     assertions2 = And(f2)
 
     background_assumptions = bound_assumptions
+    s = Solver()
+
     ## assume that we have all assumption in background variable D
     ## further assume, both files have 'weight' and fee_nl, fee_bl
     # we check: (assertions1 ^ assertions2 ^ D => fee_nl = fee_bl)
-    # equiv_formula = And(And(assertions1, assertions2, D), And(Not(fee_nl = fee_bl)))
+    equiv_formula = (
+        And(assertions1, assertions2, background_assumptions, Not(output_assumptions)),
+    )
+    s.add(equiv_formula)
 
     # alternatively, if we have fee as the output variable in both input files,
     # we want D => ((A ^ B) v (!A ^ !B)) (i.e. D => (A <=> B)) to hold
-    s = Solver()
-    equiv_formula = Or(
-        And(assertions1, assertions2), And(Not(assertions1), Not(assertions2))
-    )
-    # we want to see if it is possible to have the background conditions not being sufficient for equivalence
-    s.add(Not(Implies(background_assumptions, equiv_formula)))
+    # equiv_formula = Or(
+    #     And(assertions1, assertions2), And(Not(assertions1), Not(assertions2))
+    # )
+    # # we want to see if it is possible to have the background conditions not being sufficient for equivalence
+    # s.add(background_assumptions)
+    # s.add(Not(equiv_formula))
 
     if s.check() == unsat:
         print("✔️  The two SMT formulas are logically equivalent.")
