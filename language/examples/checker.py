@@ -32,7 +32,6 @@ def extract_variables(smt2_string: str):
         match = re.match(DECLARATION_REGEX, line)
 
         if match is not None:
-            print(match.groups()[0])
             variables.add(match.groups()[0])
 
     return variables
@@ -65,13 +64,13 @@ def check_equivalence(file1, file2, bounds_file):
 
     variables = extract_variables(smt1).union(extract_variables(smt2))
 
-    if bounds_file is not None:
+    if bounds_file is None:
+        bound_assumptions = And()
+    else:
         with open(bounds_file, "r") as f:
             bounds: list[VariableBounds] = json.load(f)
 
         bound_assumptions = extract_bound_assumptions(bounds, variables)
-    else:
-        bound_assumptions = And()
 
     # Convert to Z3 ASTs
     f1 = parse_smt2_string(smt1)
