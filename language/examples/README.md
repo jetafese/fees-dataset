@@ -21,20 +21,29 @@ Depending on the nature of the input variables for the fee calculation, there ma
 ```
 [
     {
-        "variable": "weight",
+        "type": "ranges",
+        "variables": ["weigh"],
         "min": 0,
         "max": 5
     },
     {
-        "variable": "zone",
-        "min": 1,
-        "max": 15
+        "type": "outputs",
+        "variables": ["fee_nl", "fee_bl"]
+    },
+    {
+        "type": "equals",
+        "variables": ["weight", "weigh"]
     },
     ...
 ]
 ```
 
-Note that the `min` and `max` fields are optional on each object.
+There are currently three types of constraint supported in these files:
+
+- the `range` type lets us specify a numeric range on the values of a set of variables (`min` and `max` are optional)
+- the `equals` type lets us specify that a set of variables are all equal to each other
+- the `outputs` type lets us specify the output variables (which should all be equal to each other if the formulas are equivalent)
+
 
 ## Step 3: Running the Checker
 

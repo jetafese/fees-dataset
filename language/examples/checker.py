@@ -7,9 +7,10 @@ from z3 import *
 
 
 class VariableBounds(typing.TypedDict):
-    variable: str
-    min: typing.NotRequired[float | str]
-    max: typing.NotRequired[float | str]
+    type: typing.Literal["equals", "outputs", "ranges"]
+    variables: list[str]
+    min: typing.NotRequired[float]
+    max: typing.NotRequired[float]
 
 
 DECLARATION_REGEX = r"\(declare-const\s+(.+)\s+Real\)"
@@ -37,12 +38,12 @@ def extract_variables(smt2_string: str):
     return variables
 
 
-def extract_assumptions(bounds: list[dict], variables: set[str]):
+def extract_assumptions(bounds: list[VariableBounds], variables: set[str]):
     bound_assumptions_list = []
     output_assumptions_list = []
 
     for bound in bounds:
-        if bound["type"] == "range":
+        if bound["type"] == "ranges":
             for variable_name in bound["variables"]:
                 assert (
                     variable_name in variables
@@ -67,6 +68,8 @@ def extract_assumptions(bounds: list[dict], variables: set[str]):
             for i in range(1, len(bound["variables"])):
                 variable_i = z3.Real(bound["variables"][i])
                 output_assumptions_list.append(variable_0 == variable_i)
+        else:
+            assert False, f"unknown bound type {bound['type']}"
 
     return And(bound_assumptions_list), And(output_assumptions_list)
 
