@@ -1,0 +1,7 @@
+[
+    {
+        "variable": "weight",
+        "min": 0,
+        "max": 5
+    }
+]

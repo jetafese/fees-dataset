@@ -7,4 +7,3 @@
 (assert (=> (and (<= weight 3) (> weight 2)) (= fee 5.97)))
 (assert (=> (and (<= weight 4) (> weight 3)) (= fee 6.72)))
 (assert (=> (and (<= weight 5) (> weight 4)) (= fee 7.47)))
-(assert (<= weight 5))
