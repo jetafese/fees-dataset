@@ -1,3 +1,4 @@
+import os
 import sys
 
 from antlr4 import *
@@ -8,14 +9,17 @@ from smt import generate_code
 
 # antlr4 -Dlanguage=Python3 BL.g4 -o bl -visitor
 def main(argv):
-    input = FileStream(argv[1])
-    lexer = BLLexer(input)
+    input_file = FileStream(argv[1])
+    lexer = BLLexer(input_file)
     stream = CommonTokenStream(lexer)
     parser = BLParser(stream)
 
-    with open("out.smt2", "w") as output:
+    output_file_name, _ = os.path.splitext(argv[1])
+    output_file_name += ".smt2"
+
+    with open(output_file_name, "w") as output_file:
         tree = parser.prog()
-        output.write(generate_code(tree))
+        output_file.write(generate_code(tree))
 
 
 if __name__ == "__main__":

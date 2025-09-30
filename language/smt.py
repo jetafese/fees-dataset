@@ -114,8 +114,11 @@ class SMTVisitor(BLVisitor):
 
     def visitAssign(self, ctx: BLParser.AssignContext):
         variable_name = ctx.children[1].symbol.text
-        # text = f"(declare-const {variable_name} Real)\n"
         text = ""
+        # if last child is terminal, we are declaring an input variable
+        # declaration codegen is handled by the DeclarationVisitor, so we don't
+        # need to add anything
+
         if not isinstance(ctx.children[-1], TerminalNode):
             text += f"(assert (= {variable_name} "
             text += self.visitExpr(ctx.children[-1])
