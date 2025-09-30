@@ -1,12 +1,12 @@
 [
     {
-        "type": "range",
+        "type": "ranges",
         "variables": ["weigh"],
         "min": 0,
         "max": 5
     },
     {
-        "type": "equals",
+        "type": "outputs",
         "variables": ["fee_nl", "fee_bl"]
     },
     {

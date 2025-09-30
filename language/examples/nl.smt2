@@ -7,7 +7,3 @@
 (assert (=> (and (<= weigh 3) (> weigh 2)) (= fee_nl 5.97)))
 (assert (=> (and (<= weigh 4) (> weigh 3)) (= fee_nl 6.72)))
 (assert (=> (and (<= weigh 5) (> weigh 4)) (= fee_nl 7.47)))
-(assert (= weigh 3))
-(assert (not (= fee_nl 5.97)))
-(check-sat)
-(get-model)
