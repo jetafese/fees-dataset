@@ -27,4 +27,3 @@
     )
     )
 )
-(assert (<= weight 5))
