@@ -2,7 +2,6 @@ import json
 import re
 import sys
 import typing
-import warnings
 
 from z3 import *
 
@@ -14,7 +13,7 @@ class VariableBounds(typing.TypedDict):
     max: typing.NotRequired[float]
 
 
-DECLARATION_REGEX = r"\(declare-const\s+(.+?)\s+Real\)"  # +? is non-greedy
+DECLARATION_REGEX = r"\(declare-const\s+(.+)\s+Real\)"
 
 
 def extract_variables(smt2_string: str):
@@ -30,52 +29,38 @@ def extract_variables(smt2_string: str):
     lines = smt2_string.split("\n")
     variables = set()
 
-    for match in re.finditer(DECLARATION_REGEX, smt2_string):
+    for line in lines:
+        match = re.match(DECLARATION_REGEX, line)
+
         if match is not None:
             variables.add(match.groups()[0])
 
     return variables
 
 
-def extract_assumptions(
-    bounds: list[VariableBounds], variables1: set[str], variables2: set[str]
-):
+def extract_assumptions(bounds: list[VariableBounds], variables: set[str]):
     bound_assumptions_list = []
     output_assumptions_list = []
 
-    inter_program_bounds = False
-
-    for bound in bounds:
-        for variable_name in bound["variables"]:
-            assert (
-                variable_name in variables1 or variable_name in variables2
-            ), f"variable {variable_name} not found in SMT formulations"
-            variable = z3.Real(variable_name)
-
     for bound in bounds:
         if bound["type"] == "ranges":
-            if "min" in bound:
-                bound_assumptions_list.append(variable >= bound["min"])
-            if "max" in bound:
-                bound_assumptions_list.append(variable <= bound["max"])
+            for variable_name in bound["variables"]:
+                assert (
+                    variable_name in variables
+                ), f"variable {variable_name} not found in SMT formulations"
+                variable = z3.Real(variable_name)
+
+                if "min" in bound:
+                    bound_assumptions_list.append(variable >= bound["min"])
+                if "max" in bound:
+                    bound_assumptions_list.append(variable <= bound["max"])
 
         elif bound["type"] == "equals":
             variable_0 = z3.Real(bound["variables"][0])
-            contains_from_v1 = bound["variables"][0] in variables1
-            contains_from_v2 = bound["variables"][0] in variables2
 
             for i in range(1, len(bound["variables"])):
                 variable_i = z3.Real(bound["variables"][i])
                 bound_assumptions_list.append(variable_0 == variable_i)
-                contains_from_v1 = (
-                    contains_from_v1 or bound["variables"][i] in variables1
-                )
-                contains_from_v2 = (
-                    contains_from_v2 or bound["variables"][i] in variables2
-                )
-
-            if contains_from_v1 and contains_from_v2:
-                inter_program_bounds = True
 
         elif bound["type"] == "outputs":
             variable_0 = z3.Real(bound["variables"][0])
@@ -83,16 +68,8 @@ def extract_assumptions(
             for i in range(1, len(bound["variables"])):
                 variable_i = z3.Real(bound["variables"][i])
                 output_assumptions_list.append(variable_0 == variable_i)
-
         else:
             assert False, f"unknown bound type {bound['type']}"
-
-    if not inter_program_bounds:
-        warnings.warn(
-            f"No equality bounds specified between variables in the two programs, only variables shared are {variables1.intersection(variables2)}"
-        )
-    if len(output_assumptions_list) == 0:
-        warnings.warn(f"No assertions provided on program output")
 
     return And(bound_assumptions_list), And(output_assumptions_list)
 
@@ -104,8 +81,7 @@ def check_equivalence(file1, file2, bounds_file):
     with open(file2, "r") as f:
         smt2 = f.read()
 
-    f1_variables = extract_variables(smt1)
-    f2_variables = extract_variables(smt2)
+    variables = extract_variables(smt1).union(extract_variables(smt2))
 
     if bounds_file is None:
         bound_assumptions = And()
@@ -114,9 +90,7 @@ def check_equivalence(file1, file2, bounds_file):
         with open(bounds_file, "r") as f:
             bounds: list[VariableBounds] = json.load(f)
 
-        bound_assumptions, output_assumptions = extract_assumptions(
-            bounds, f1_variables, f2_variables
-        )
+        bound_assumptions, output_assumptions = extract_assumptions(bounds, variables)
 
     # Convert to Z3 ASTs
     f1 = parse_smt2_string(smt1)
