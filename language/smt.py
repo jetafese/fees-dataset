@@ -6,12 +6,17 @@ from antlr4 import *
 
 
 @dataclass
+class SMTConfig:
+    use_functions: bool = False
+
+
+@dataclass
 class Symbol:
     name: str
 
     # assume all function args + return types are real numbers
     # non-functions have arity 0
-    arity: int
+    params: set[str]
 
     def __hash__(self):
         return hash(self.name)
@@ -33,7 +38,7 @@ class UseVisitor(BLVisitor):
             # unaryexpr -> IDENTIFIER
             if child_type == BLParser.IDENTIFIER:
                 value: str = ctx.children[0].symbol.text
-                return value
+                return {value}
 
         return self.visitChildren(ctx)
 
@@ -54,15 +59,19 @@ class DeclarationVisitor(BLVisitor):
         variable_name = ctx.children[1].symbol.text
         args = UseVisitor().visitExpr(ctx.children[-1])
 
-        return {Symbol(variable_name, len(args))}
+        return {Symbol(variable_name, args)}
 
 
 class SMTVisitor(BLVisitor):
+    def __init__(self, symbols: set[Symbol], config: SMTConfig):
+        self._symbols = {symbol.name: symbol for symbol in symbols}
+        self._config = config
+
     def defaultResult(self):
         return ""
 
     def aggregateResult(self, aggregate: str, nextResult: str):
-        if len(aggregate) == 0 or len(nextResult) == 0:
+        if len(aggregate) == 0 or len(nextResult) == 0 or aggregate[-1] == "\n":
             return aggregate + nextResult
         return aggregate + " " + nextResult
 
@@ -149,30 +158,65 @@ class SMTVisitor(BLVisitor):
         return text
 
     def visitAssign(self, ctx: BLParser.AssignContext):
+        if self._config.use_functions:
+            return self.visitAssign_functions(ctx)
+        else:
+            return self.visitAssign_no_functions(ctx)
+
+    def visitAssign_no_functions(self, ctx: BLParser.AssignContext):
         variable_name = ctx.children[1].symbol.text
-        text = ""
         # if last child is terminal, we are declaring an input variable
         # declaration codegen is handled by the DeclarationVisitor, so we don't
         # need to add anything
 
-        if not isinstance(ctx.children[-1], TerminalNode):
-            text += f"(assert (= {variable_name} "
-            text += self.visitExpr(ctx.children[-1])
-            text += "))"
+        if isinstance(ctx.children[-1], TerminalNode):
+            return ""
+
+        text = f"(assert (= {variable_name} "
+        text += self.visitExpr(ctx.children[-1])
+        text += "))"
 
         return text
 
+    def visitAssign_functions(self, ctx: BLParser.AssignContext):
+        variable_name = ctx.children[1].symbol.text
+        if isinstance(ctx.children[-1], TerminalNode):
+            return ""
 
-def generate_code(tree: BLParser.ProgContext):
-    declaration_visitor = DeclarationVisitor()
-    symbols: set[Symbol] = declaration_visitor.visit(tree)
+        #         """(define-fun x ((w Real) (v Real)) Real
+        #  (ite (< w 2) (* v 2) v)
+        # )
+        # """
 
-    text = "(set-logic  QF_LRA)\n"
+        param_string = " ".join(
+            f"({param} Real)" for param in self._symbols[variable_name].params
+        )
 
-    for symbol in symbols:
-        text += f"(declare-const {symbol.name} Real)\n"
+        expr_string = self.visitExpr(ctx.children[-1])
 
-    smt_visitor = SMTVisitor()
-    text += smt_visitor.visit(tree)
+        return f"(define-fun {variable_name} ({param_string}) Real {expr_string})\n"
 
-    return text
+
+class SMTCompiler:
+    def __init__(self, config: SMTConfig | None = None):
+        self._config = config or SMTConfig()
+
+    def generate_code(self, tree: BLParser.ProgContext):
+        declaration_visitor = DeclarationVisitor()
+        symbols: set[Symbol] = declaration_visitor.visit(tree)
+
+        text = "(set-logic  QF_LRA)\n"
+
+        for symbol in symbols:
+            if (
+                self._config.use_functions and len(symbol.params) == 0
+            ) or not self._config.use_functions:
+                # if self._config.use_functions and len(symbol.params) > 0:
+                # text += f"(declare-fun {symbol.name} ({' '.join(['Real'] * len(symbol.params))}) Real)\n"
+                # else:
+                text += f"(declare-const {symbol.name} Real)\n"
+
+        smt_visitor = SMTVisitor(symbols, self._config)
+        text += smt_visitor.visit(tree)
+
+        return text

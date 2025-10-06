@@ -4,7 +4,7 @@ import sys
 from antlr4 import *
 from bl.BLLexer import BLLexer
 from bl.BLParser import BLParser
-from smt import generate_code
+from smt import SMTCompiler, SMTConfig
 
 
 # antlr4 -Dlanguage=Python3 BL.g4 -o bl -visitor
@@ -19,7 +19,9 @@ def main(argv):
 
     with open(output_file_name, "w") as output_file:
         tree = parser.prog()
-        output_file.write(generate_code(tree))
+        output_file.write(
+            SMTCompiler(SMTConfig(use_functions=True)).generate_code(tree)
+        )
 
 
 if __name__ == "__main__":
