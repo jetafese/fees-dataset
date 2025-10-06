@@ -1,14 +1,48 @@
+from dataclasses import dataclass
+
 from bl.BLVisitor import BLVisitor
-from bl.BLListener import BLListener
 from bl.BLParser import BLParser
 from antlr4 import *
 
 
-class DeclarationVisitor(BLVisitor):
+@dataclass
+class Symbol:
+    name: str
+
+    # assume all function args + return types are real numbers
+    # non-functions have arity 0
+    arity: int
+
+    def __hash__(self):
+        return hash(self.name)
+
+
+class UseVisitor(BLVisitor):
+    """Visitor for finding sets of variables used in an expression"""
+
     def defaultResult(self) -> set[str]:
         return set()
 
     def aggregateResult(self, aggregate: set[str], nextResult: set[str]):
+        return aggregate.union(nextResult)
+
+    def visitUnaryexpr(self, ctx: BLParser.UnaryexprContext):
+        if isinstance(ctx.children[0], TerminalNode):
+            child_type = ctx.children[0].symbol.type
+            # unaryexpr -> NUMBER
+            # unaryexpr -> IDENTIFIER
+            if child_type == BLParser.IDENTIFIER:
+                value: str = ctx.children[0].symbol.text
+                return value
+
+        return self.visitChildren(ctx)
+
+
+class DeclarationVisitor(BLVisitor):
+    def defaultResult(self) -> set[Symbol]:
+        return set()
+
+    def aggregateResult(self, aggregate: set[Symbol], nextResult: set[Symbol]):
         if len(aggregate.intersection(nextResult)) > 0:
             raise ValueError(
                 f"repeated definition of variables {aggregate.intersection(nextResult)}"
@@ -18,7 +52,9 @@ class DeclarationVisitor(BLVisitor):
 
     def visitAssign(self, ctx: BLParser.AssignContext):
         variable_name = ctx.children[1].symbol.text
-        return {variable_name}
+        args = UseVisitor().visitExpr(ctx.children[-1])
+
+        return {Symbol(variable_name, len(args))}
 
 
 class SMTVisitor(BLVisitor):
@@ -129,12 +165,12 @@ class SMTVisitor(BLVisitor):
 
 def generate_code(tree: BLParser.ProgContext):
     declaration_visitor = DeclarationVisitor()
-    variables = declaration_visitor.visit(tree)
+    symbols: set[Symbol] = declaration_visitor.visit(tree)
 
     text = "(set-logic  QF_LRA)\n"
 
-    for variable in variables:
-        text += f"(declare-const {variable} Real)\n"
+    for symbol in symbols:
+        text += f"(declare-const {symbol.name} Real)\n"
 
     smt_visitor = SMTVisitor()
     text += smt_visitor.visit(tree)
