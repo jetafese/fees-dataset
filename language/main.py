@@ -1,3 +1,4 @@
+import argparse
 import os
 import sys
 
@@ -8,21 +9,28 @@ from smt import SMTCompiler, SMTConfig
 
 
 # antlr4 -Dlanguage=Python3 BL.g4 -o bl -visitor
-def main(argv):
-    input_file = FileStream(argv[1])
+def main(input_file_name: str, config: SMTConfig):
+    input_file = FileStream(input_file_name)
     lexer = BLLexer(input_file)
     stream = CommonTokenStream(lexer)
     parser = BLParser(stream)
 
-    output_file_name, _ = os.path.splitext(argv[1])
+    output_file_name, _ = os.path.splitext(input_file_name)
     output_file_name += ".smt2"
 
     with open(output_file_name, "w") as output_file:
         tree = parser.prog()
-        output_file.write(
-            SMTCompiler(SMTConfig(use_functions=True)).generate_code(tree)
-        )
+        output_file.write(SMTCompiler(config).generate_code(tree))
 
 
 if __name__ == "__main__":
-    main(sys.argv)
+    parser = argparse.ArgumentParser(description="BL to SMT compiler")
+    parser.add_argument("-f", "--functions", action="store_true")
+    parser.add_argument("input_file", type=str, help="Input BL file to be compiled")
+
+    args = parser.parse_args()
+    config = SMTConfig(
+        use_functions=args.functions,
+    )
+
+    main(args.input_file, config)
