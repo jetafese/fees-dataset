@@ -183,18 +183,23 @@ class SMTVisitor(BLVisitor):
         if isinstance(ctx.children[-1], TerminalNode):
             return ""
 
-        #         """(define-fun x ((w Real) (v Real)) Real
-        #  (ite (< w 2) (* v 2) v)
-        # )
-        # """
-
         param_string = " ".join(
             f"({param} Real)" for param in self._symbols[variable_name].params
         )
 
+        application_string = (
+            f"{variable_name} {' '.join(list(self._symbols[variable_name].params))}"
+        )
+
+        """
+        (assert (forall ((max Real) (weight Real)) (= (fee_bl max weight) (
+            ite (<= weight 1) 4.47 (ite (<= weight 2) 5.22 (ite (<= weight 3) 5.97 (ite (<= weight 4) 6.72 (ite (<= weight 5) 7.47 max))))
+        ))))
+        """
+
         expr_string = self.visitExpr(ctx.children[-1])
 
-        return f"(define-fun {variable_name} ({param_string}) Real {expr_string})\n"
+        return f"(assert (forall ({param_string}) (= ({application_string}) {expr_string})))"
 
 
 class SMTCompiler:
@@ -205,16 +210,16 @@ class SMTCompiler:
         declaration_visitor = DeclarationVisitor()
         symbols: set[Symbol] = declaration_visitor.visit(tree)
 
-        text = "(set-logic  QF_LRA)\n"
+        # text = "(set-logic  QF_LRA)\n"
+        text = ""
 
         for symbol in symbols:
-            if (
-                self._config.use_functions and len(symbol.params) == 0
-            ) or not self._config.use_functions:
-                # if self._config.use_functions and len(symbol.params) > 0:
-                # text += f"(declare-fun {symbol.name} ({' '.join(['Real'] * len(symbol.params))}) Real)\n"
-                # else:
+            if not self._config.use_functions:
                 text += f"(declare-const {symbol.name} Real)\n"
+            elif (
+                self._config.use_functions and len(symbol.params) > 0
+            ):  # self._config.use_functions and len(symbol.params) > 0
+                text += f"(declare-fun {symbol.name} ({' '.join(['Real'] * len(symbol.params))}) Real)\n"
 
         smt_visitor = SMTVisitor(symbols, self._config)
         text += smt_visitor.visit(tree)
