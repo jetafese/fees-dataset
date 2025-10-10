@@ -16,7 +16,7 @@ unaryexpr:  NUMBER
 if: 'if' expr COMP expr 'then' expr 'else' expr;
 
 NUMBER: [0-9]+(.[0-9]([0-9])?)? ;
-IDENTIFIER: [a-zA-Z][a-zA-Z0-9]* ;
+IDENTIFIER: [a-zA-Z][_a-zA-Z0-9]* ;
 OP: '+'|'-'|'x'|'/' ;
 COMP: '>'|'<'|'=='|'<='|'>=' ;
 WHITESPACE: [ \t\r\n] -> skip;
