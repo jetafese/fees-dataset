@@ -1,0 +1,7 @@
+[
+    {
+        "type": "mapping",
+        "functions": ["fee_bl", "fee_nl"],
+        "mapping": [["weight", "weight"], ["max", "max"], ["weight", "weigh"], ["maximus", "max"], ["weight", "weights"], ["min", "max"]]
+    }
+]

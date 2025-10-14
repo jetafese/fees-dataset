@@ -1,0 +1,9 @@
+income = <input>
+sin = <input>
+p33 = if income > 253414 then (.33 * (income - 253414)) else (0)
+p29 = if income <= 253414 then (if income > 177882 then (.29 * (income))) else (.29 * (income - 177882)) else (0)
+p26 = 
+special = if sin == 999999999 then (0) else (1)
+fee = special * (p33 + p29 + p26 + p205 + p145)
+
+(.33 * (income - 253414)) else (0)
