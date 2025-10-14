@@ -17,6 +17,7 @@ def extract_assertions(bounds: list[FunctionBounds], model: dict[str, typing.Any
         if len(bound["functions"]) < 2:
             raise AssertionError("Must assert equivalence between at least 2 functions")
 
+        # this doesn't assume that there are only 2 functions to compare
         f_0 = model[bound["functions"][0]]
 
         for i in range(1, len(bound["functions"])):
@@ -24,7 +25,7 @@ def extract_assertions(bounds: list[FunctionBounds], model: dict[str, typing.Any
             n = f_0.arity()
 
             # xs = [Real(f"x{j}") for j in range(n)]
-            xs = Array("xs", IntSort(), IntSort())
+            xs = Array("xs", IntSort(), RealSort())
 
             if bound["type"] == "strict":
                 assert n == f_i.arity(), "Functions must have same arity"
@@ -65,6 +66,7 @@ def check_equivalence(file1: str, file2: str, bounds_file: str | None = None):
         ast = parse_smt2_file(file)
         s.add(And(ast))
 
+    # refer to checker/functions/README.md for more information
     assert s.check() == z3.sat, "Model is not satisfiable"
     model_vars = {item.name(): item for item in s.model()}
 
