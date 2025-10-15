@@ -16,7 +16,10 @@ class Symbol:
 
     # assume all function args + return types are real numbers
     # non-functions have arity 0
-    params: set[str]
+    params: list[str]
+
+    # declaration order
+    index: int
 
     def __hash__(self):
         return hash(self.name)
@@ -44,22 +47,39 @@ class UseVisitor(BLVisitor):
 
 
 class DeclarationVisitor(BLVisitor):
+    def __init__(self):
+        self._symbols: dict[str, Symbol] = {}
+
     def defaultResult(self) -> set[Symbol]:
         return set()
 
     def aggregateResult(self, aggregate: set[Symbol], nextResult: set[Symbol]):
-        if len(aggregate.intersection(nextResult)) > 0:
-            raise ValueError(
-                f"repeated definition of variables {aggregate.intersection(nextResult)}"
-            )
+        intersection = aggregate.intersection(nextResult)
+        if len(intersection) != 0:
+            raise ValueError(f"repeated definition of variables {intersection}")
 
         return aggregate.union(nextResult)
 
     def visitAssign(self, ctx: BLParser.AssignContext):
         variable_name = ctx.children[1].symbol.text
+        # first, find all variables used in the definition of this variable
         args = UseVisitor().visitExpr(ctx.children[-1])
+        # now, find all the input variables those rely on
+        input_vars = set()
+        for arg in args:
+            if len(self._symbols[arg].params) == 0:
+                input_vars.add(arg)
+            else:
+                input_vars = input_vars.union(self._symbols[arg].params)
 
-        return {Symbol(variable_name, args)}
+        # sort according to declaration order to ensure consistency
+        input_vars = sorted(input_vars, key=lambda var: self._symbols[var].index)
+
+        new_symbol = Symbol(
+            name=variable_name, params=input_vars, index=len(self._symbols)
+        )
+        self._symbols[variable_name] = new_symbol
+        return {new_symbol}
 
 
 class SMTVisitor(BLVisitor):
@@ -121,9 +141,17 @@ class SMTVisitor(BLVisitor):
             child_type = ctx.children[0].symbol.type
             # unaryexpr -> NUMBER
             # unaryexpr -> IDENTIFIER
-            if child_type == BLParser.NUMBER or child_type == BLParser.IDENTIFIER:
+            if child_type == BLParser.NUMBER:
+                return ctx.children[0].symbol.text
+            if child_type == BLParser.IDENTIFIER:
                 value: str = ctx.children[0].symbol.text
-                return value
+                if (
+                    len(self._symbols[value].params) == 0
+                    or not self._config.use_functions
+                ):
+                    return value
+
+                return f"({value} {' '.join(self._symbols[value].params)})"
 
             # unaryexpr -> ( expr )
             elif child_type == BLParser.literalNames.index("'('"):
