@@ -1,12 +1,12 @@
 grammar BL;
 
-prog: assigns ;
+prog: assigns EOF;
 assigns : (assign)+ ;
 assign: 'let' IDENTIFIER '=' expr
         |   'let' IDENTIFIER '=' '<input>'
         ;
-expr:   multexpr (('+' | '-') multexpr)? ;
-multexpr:   unaryexpr (('*' | '/') unaryexpr)? ;
+expr:   multexpr (('+' | '-') multexpr)* ;
+multexpr:   unaryexpr (('*' | '/') unaryexpr)* ;
 unaryexpr:  NUMBER
         |   IDENTIFIER
         |   '(' expr ')'

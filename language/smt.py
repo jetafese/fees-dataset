@@ -93,48 +93,42 @@ class SMTVisitor(BLVisitor):
     def aggregateResult(self, aggregate: str, nextResult: str):
         if len(aggregate) == 0 or len(nextResult) == 0 or aggregate[-1] == "\n":
             return aggregate + nextResult
-        return aggregate + " " + nextResult
+        return aggregate + "\n" + nextResult
 
     def visitAssigns(self, ctx: BLParser.AssignsContext) -> str:
         return self.visitChildren(ctx)
 
     def visitExpr(self, ctx: BLParser.ExprContext):
-        if len(ctx.children) == 1:
-            return self.visitChildren(ctx)
+        # base case: 1 operand
+        result = self.visit(ctx.multexpr(0))
 
-        # expr -> expr '+' multexpr
-        # expr -> expr '-' multexpr
+        for i in range(1, len(ctx.multexpr())):
+            op = ctx.children[2 * i - 1].getText()  # operators are at odd indices
+            right = self.visit(ctx.multexpr(i))
+            if op == "+":
+                result = f"(+ {result} {right})"
+            elif op == "-":
+                result = f"(- {result} {right})"
+            else:
+                raise ValueError(f"Unexpected operator: {op}")
 
-        if ctx.children[1].getText() == "+":
-            text = "(+ "
-        elif ctx.children[1].getText() == "-":
-            text = "(- "
-        else:
-            assert False
-
-        text += self.visitChildren(ctx)
-        text += ")"
-
-        return text
+        return result
 
     def visitMultexpr(self, ctx: BLParser.MultexprContext):
-        if len(ctx.children) == 1:
-            return self.visitChildren(ctx)
+        # base case: 1 operand
+        result = self.visit(ctx.unaryexpr(0))
 
-        # expr -> expr '*' multexpr
-        # expr -> expr '/' multexpr
+        for i in range(1, len(ctx.unaryexpr())):
+            op = ctx.children[2 * i - 1].getText()  # operators are at odd indices
+            right = self.visit(ctx.unaryexpr(i))
+            if op == "*":
+                result = f"(* {result} {right})"
+            elif op == "/":
+                result = f"(/ {result} {right})"
+            else:
+                raise ValueError(f"Unexpected operator: {op}")
 
-        if ctx.children[1].getText() == "*":
-            text = "(* "
-        elif ctx.children[1].getText() == "/":
-            text = "(/ "
-        else:
-            assert False
-
-        text += self.visitChildren(ctx)
-        text += ")"
-
-        return text
+        return result
 
     def visitUnaryexpr(self, ctx: BLParser.UnaryexprContext):
         if isinstance(ctx.children[0], TerminalNode):
