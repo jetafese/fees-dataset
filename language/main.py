@@ -8,6 +8,7 @@ from bl.BLParser import BLParser
 from smt import SMTCompiler, SMTConfig
 
 
+# After updating the grammar in BL.g4, run the command below:
 # antlr4 -Dlanguage=Python3 BL.g4 -o bl -visitor
 def main(input_file_name: str, config: SMTConfig):
     input_file = FileStream(input_file_name)

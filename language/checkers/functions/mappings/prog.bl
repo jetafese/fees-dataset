@@ -1,9 +1,10 @@
-income = <input>
-sin = <input>
-p33 = if income > 253414 then (.33 * (income - 253414)) else (0)
-p29 = if income <= 253414 then (if income > 177882 then (.29 * (income))) else (.29 * (income - 177882)) else (0)
-p26 = 
-special = if sin == 999999999 then (0) else (1)
-fee = special * (p33 + p29 + p26 + p205 + p145)
+let income = <input>
+let sin = <input>
 
-(.33 * (income - 253414)) else (0)
+let p33 = if income > 253414 then 0.33 * (income - 253414) else 0
+let p29 = if income > 177882 then 0.29 * ((if income > 253414 then 253414 else income) - 177882) else 0
+let p26 = if income > 114750 then 0.26 * ((if income > 177882 then 177882 else income) - 114750) else 0
+let p20_5 = if income > 57345 then 0.205 * ((if income > 114750 then 114750 else income) - 57345) else 0
+let p14_5 = 0.145 * (if income > 57345 then 57345 else income)
+
+let fee_bl = p33 + p29 + p26 + p20_5 + p14_5
