@@ -1,6 +1,6 @@
 [
     {
-        "type": "mapping",
+        "type": "strict",
         "functions": ["fee_bl", "fee_nl"]
     }
 ]

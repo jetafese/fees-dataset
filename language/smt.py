@@ -54,14 +54,13 @@ class DeclarationVisitor(BLVisitor):
         return set()
 
     def aggregateResult(self, aggregate: set[Symbol], nextResult: set[Symbol]):
-        intersection = aggregate.intersection(nextResult)
-        if len(intersection) != 0:
-            raise ValueError(f"repeated definition of variables {intersection}")
-
         return aggregate.union(nextResult)
 
     def visitAssign(self, ctx: BLParser.AssignContext):
         variable_name = ctx.children[1].symbol.text
+        if variable_name in self._symbols:
+            raise ValueError(f"repeated definition of variable {variable_name}")
+
         # first, find all variables used in the definition of this variable
         args = UseVisitor().visitExpr(ctx.children[-1])
         # now, find all the input variables those rely on
