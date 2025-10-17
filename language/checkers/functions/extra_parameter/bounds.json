@@ -1,6 +1,7 @@
 [
     {
         "type": "mapping",
-        "functions": ["fee_bl", "fee_nl"]
+        "functions": ["fee_bl", "fee_nl"],
+        "inputs": "inputs"
     }
 ]
