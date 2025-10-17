@@ -5,6 +5,8 @@ import typing
 
 from z3 import *
 
+MAX_CONDITIONS = 100
+
 
 class FunctionBounds(typing.TypedDict):
     type: typing.Literal["strict", "mapping"]
@@ -128,7 +130,6 @@ def check_equivalence(file1: str, file2: str, bounds_file: str | None = None):
 
     # refer to checker/functions/README.md for more information
     assert s.check() == z3.sat, "Model is not satisfiable"
-    model_vars = {item.name(): item for item in s.model()}
 
     if bounds_file is None:
         assertion_data = AssertionData()
@@ -141,29 +142,29 @@ def check_equivalence(file1: str, file2: str, bounds_file: str | None = None):
     s.add(assertion_data.bound_assumptions)
     s.add(Not(assertion_data.output_assertions))
 
-    while s.check() == sat:
-        print("❌  The two SMT formulas are NOT equivalent.")
-        print("Counterexample:")
-
+    conditions = []
+    counterexample = None
+    while s.check() == sat and len(conditions) < MAX_CONDITIONS:
         model = s.model()
-        conditions = []
-
         for ary, length in assertion_data.input_arrays:
-            print(f"{ary.decl().name()}:", end=" ")
-            for i in range(length):
-                print(model.evaluate(ary[i]), end=" ")
-            print()
-
             condition = And(*[ary[i] != model.evaluate(ary[i]) for i in range(length)])
             s.add(condition)
             conditions.append(condition)
 
+            if counterexample is None:
+                counterexample = f"{ary.decl().name()}: {[model.evaluate(ary[i]) for i in range(length)]}"
+
+    if s.check() == unsat:
         print(
             "✔️  The two SMT formulas are logically equivalent, modulo the following conditions:"
         )
 
         for condition in conditions:
             print(condition)
+    else:
+        print("❌  The two SMT formulas are NOT equivalent.")
+        print("Counterexample:")
+        print(counterexample)
 
 
 if __name__ == "__main__":
