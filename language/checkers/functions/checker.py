@@ -10,6 +10,7 @@ class FunctionBounds(typing.TypedDict):
     type: typing.Literal["strict", "mapping"]
     functions: list[str]
     mapping: list[list[str]]
+    inputs: str
 
 
 @dataclass
@@ -61,8 +62,7 @@ def extract_assertions(
         for i in range(1, len(bound["functions"])):
             f_i = functions[bound["functions"][i]].decl
 
-            # xs = [Real(f"x{j}") for j in range(n)]
-            xs = Array(f"xs-{len(input_arrays)}", IntSort(), RealSort())
+            xs = Array(bound["inputs"], IntSort(), RealSort())
 
             if bound["type"] == "strict":
                 assert f_0.arity() == f_i.arity(), "Functions must have same arity"
@@ -93,7 +93,7 @@ def extract_assertions(
                         )
                         index_mappings[i][current_param_index] = original_param_index
 
-                xs = Array(f"xs-{len(input_arrays)}", IntSort(), RealSort())
+                xs = Array(bound["inputs"], IntSort(), RealSort())
                 f_0 = mapped_functions[0].decl
 
                 for f_i, mapping in zip(mapped_functions[1:], index_mappings[1:]):
@@ -120,9 +120,10 @@ def check_equivalence(file1: str, file2: str, bounds_file: str | None = None):
 
     functions: dict[str, ParamFunction] = {}
 
+    # extract functions and constraints from input files
     for file in file1, file2:
-        ast = parse_smt2_file(file)
         functions |= parse_functions(file)
+        ast = parse_smt2_file(file)
         s.add(And(ast))
 
     # refer to checker/functions/README.md for more information
@@ -140,19 +141,29 @@ def check_equivalence(file1: str, file2: str, bounds_file: str | None = None):
     s.add(assertion_data.bound_assumptions)
     s.add(Not(assertion_data.output_assertions))
 
-    if s.check() == unsat:
-        print("✔️  The two SMT formulas are logically equivalent.")
-    else:
+    while s.check() == sat:
         print("❌  The two SMT formulas are NOT equivalent.")
         print("Counterexample:")
 
         model = s.model()
+        conditions = []
 
         for ary, length in assertion_data.input_arrays:
+            print(f"{ary.decl().name()}:", end=" ")
             for i in range(length):
                 print(model.evaluate(ary[i]), end=" ")
-
             print()
+
+            condition = And(*[ary[i] != model.evaluate(ary[i]) for i in range(length)])
+            s.add(condition)
+            conditions.append(condition)
+
+        print(
+            "✔️  The two SMT formulas are logically equivalent, modulo the following conditions:"
+        )
+
+        for condition in conditions:
+            print(condition)
 
 
 if __name__ == "__main__":
