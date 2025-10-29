@@ -1,6 +1,6 @@
 let w = <input>
 let max = <input>
-if w <= 1 then 4.25 else
+let fee_bl = if w <= 1 then 4.25 else
 if w <= 2 then 4.96 else
 if w <= 3 then 5.67 else
 if w <= 4 then 6.38 else
