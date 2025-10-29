@@ -1,0 +1,7 @@
+Yukon income tax rates for 2025
+Tax rate	Taxable income threshold
+6.4%	on the portion of taxable income that is $57,375 or less, plus
+9%	on the portion of taxable income over $57,375 up to $114,750, plus
+10.9%	on the portion of taxable income over $114,750 up to $177,882, plus
+12.8%	on the portion of taxable income over $177,882 up to $500,000, plus
+15%	on the portion of taxable income over $500,000

@@ -1,0 +1,5 @@
+Saskatchewan income tax rates for 2025
+Tax rate	Taxable income threshold
+10.5%	on the portion of taxable income that is $53,463 or less, plus
+12.5%	on the portion of taxable income over $53,463 up to $152,750, plus
+14.5%	on the portion of taxable income over $152,750

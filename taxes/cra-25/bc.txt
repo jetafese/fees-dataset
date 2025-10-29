@@ -1,0 +1,9 @@
+British Columbia income tax rates for 2025
+Tax rate	Taxable income threshold
+5.06%	on the portion of taxable income that is $49,279 or less, plus
+7.7%	on the portion of taxable income over $49,279 up to $98,560, plus
+10.5%	on the portion of taxable income over $98,560 up to $113,158, plus
+12.29%	on the portion of taxable income over $113,158 up to $137,407, plus
+14.7%	on the portion of taxable income over $137,407 up to $186,306, plus
+16.8%	on the portion of taxable income over $186,306 up to $259,829, plus
+20.5%	on the portion of taxable income over $259,829

@@ -1,0 +1,6 @@
+New Brunswick income tax rates for 2025
+Tax rate	Taxable income threshold
+9.4%	on the portion of taxable income that is $51,306 or less, plus
+14%	on the portion of taxable income over $51,306 up to $102,614, plus
+16%	on the portion of taxable income over $102,614 up to $190,060, plus
+19.5%	on the portion of taxable income over $190,060

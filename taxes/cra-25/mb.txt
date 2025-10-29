@@ -1,0 +1,5 @@
+Manitoba income tax rates for 2025
+Tax rate	Taxable income threshold
+10.8%	on the portion of taxable income that is $47,564 or less, plus
+12.75%	on the portion of taxable income over $47,564 up to $101,200, plus
+17.4%	on the portion of taxable income over $101,200

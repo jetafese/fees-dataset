@@ -1,0 +1,10 @@
+Newfoundland and Labrador income tax rates for 2025
+Tax rate	Taxable income threshold
+8.7%	on the portion of taxable income that is $44,192 or less, plus
+14.5%	on the portion of taxable income over $44,192 up to $88,382, plus
+15.8%	on the portion of taxable income over $88,382 up to $157,792, plus
+17.8%	on the portion of taxable income over $157,792 up to $220,910, plus
+19.8%	on the portion of taxable income over $220,910 up to $282,214, plus
+20.8%	on the portion of taxable income over $282,214 up to $564,429, plus
+21.3%	on the portion of taxable income over $564,429 up to $1,128,858, plus
+21.8%	on the portion of taxable income over $1,128,858

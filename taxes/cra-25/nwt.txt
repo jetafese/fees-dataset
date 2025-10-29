@@ -1,0 +1,6 @@
+Northwest Territories income tax rates for 2025
+Tax rate	Taxable income threshold
+5.9%	on the portion of taxable income that is $51,964 or less, plus
+8.6%	on the portion of taxable income over $51,964 up to $103,930, plus
+12.2%	on the portion of taxable income over $103,930 up to $168,967, plus
+14.05%	on the portion of taxable income over $168,967

@@ -1,0 +1,7 @@
+Nova Scotia income tax rates for 2025
+Tax rate	Taxable income threshold
+8.79%	on the portion of taxable income that is $30,507 or less, plus
+14.95%	on the portion of taxable income over $30,507 up to $61,015, plus
+16.67%	on the portion of taxable income over $61,015 up to $95,883, plus
+17.5%	on the portion of taxable income over $95,883 up to $154,650, plus
+21%	on the portion of taxable income over $154,650

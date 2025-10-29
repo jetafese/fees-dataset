@@ -1,0 +1,7 @@
+Ontario income tax rates for 2025
+Tax rate	Taxable income threshold
+5.05%	on the portion of taxable income that is $52,886 or less, plus
+9.15%	on the portion of taxable income over $52,886 up to $105,775, plus
+11.16%	on the portion of taxable income over $105,775 up to $150,000, plus
+12.16%	on the portion of taxable income over $150,000 up to $220,000, plus
+13.16%	on the portion of taxable income over $220,000

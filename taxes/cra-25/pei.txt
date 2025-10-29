@@ -1,0 +1,8 @@
+
+Prince Edward Island income tax rates for 2025
+Tax rate	Taxable income threshold
+9.5%	on the portion of taxable income that is $33,328 or less, plus
+13.47%	on the portion of taxable income over $33,328 up to $64,656, plus
+16.6%	on the portion of taxable income over $64,656 up to $105,000, plus
+17.62%	on the portion of taxable income over $105,000 up to $140,000, plus
+19%	on the portion of taxable income over $140,000

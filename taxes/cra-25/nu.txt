@@ -1,0 +1,6 @@
+Nunavut income tax rates for 2025
+Tax rate	Taxable income threshold
+4%	on the portion of taxable income that is $54,707 or less, plus
+7%	on the portion of taxable income over $54,707 up to $109,413, plus
+9%	on the portion of taxable income over $109,413 up to $177,881, plus
+11.5%	on the portion of taxable income over $177,881

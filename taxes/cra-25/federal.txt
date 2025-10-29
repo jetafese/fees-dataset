@@ -1,0 +1,7 @@
+Federal income tax rates for 2025
+Tax rate,	Taxable income threshold
+14.5%	on the portion of taxable income that is $57,375 or less, plus
+20.5%	on the portion of taxable income over $57,375 up to $114,750, plus
+26%	on the portion of taxable income over $114,750 up to $177,882, plus
+29%	on the portion of taxable income over $177,882 up to $253,414, plus
+33%	on the portion of taxable income over $253,414
