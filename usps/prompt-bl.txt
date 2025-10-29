@@ -1,0 +1,52 @@
+Write a program to compute the value of the fee in the output variable fee_bl using the Business Language BL.
+
+The Antlr grammar for BL is provided below:
+
+grammar BL;
+
+prog: assigns EOF;
+assigns : (assign)+ ;
+assign: 'let' IDENTIFIER '=' expr
+        |   'let' IDENTIFIER '=' '<input>'
+        ;
+expr:   multexpr (('+' | '-') multexpr)* ;
+multexpr:   unaryexpr (('*' | '/') unaryexpr)* ;
+unaryexpr:  NUMBER
+        |   IDENTIFIER
+        |   '(' expr ')'
+        |   if
+        ;
+
+if: 'if' expr COMP expr 'then' expr 'else' expr;
+
+NUMBER: [0-9]+(.[0-9]+)? ;
+IDENTIFIER: [a-zA-Z][_a-zA-Z0-9]* ;
+OP: '+'|'-'|'x'|'/' ;
+COMP: '>'|'<'|'=='|'<='|'>=' ;
+WHITESPACE: [ \t\r\n] -> skip;
+
+
+For example, when given the fee description in <description></description> you should respond with the program <program></program>.
+
+<description>
+WeightNotOver (lbs.) SinglePiece 
+1    4.47
+2    5.22
+3    5.97
+4    6.72
+5    7.47
+</description>
+
+<program>
+let weight = <input>
+let max = <input>
+let fee_bl = if weight <= 1 then (4.47) else (
+    if weight <= 2 then (5.22) else (
+        if weight <= 3 then (5.97) else (
+            if weight <= 4 then (6.72) else (
+                if weight <= 5 then (7.47) else (max)
+            )
+        )
+    )
+)
+</program>
