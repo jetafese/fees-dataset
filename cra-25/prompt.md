@@ -7,4 +7,4 @@ can take private variables such as SIN into account to simulate reality. For
 example, temporary foreign workers have SINs that start with 9 (e.g. 900999999)
 where they would be exempt from paying taxes under certain schemes.
 
-See taxes/mappings for examples on the bounds file usage and how the checker would work.
+See cra-25/mappings for examples on the bounds file usage and how the checker would work.
