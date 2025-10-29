@@ -1,0 +1,29 @@
+You are an expert in writing SMT queries that are well suited for handling fees.
+More specifically, you are an expert in writing formulas within the theory of QF_LIRA.
+Write an SMT program to compute the value of the fee in the output variable fee_nl.
+Make sure to include all relevant fields and conditions in the natural language description.
+
+For example, when given the fee description in <description></description> you should respond with the formula <formula></formula>.
+
+<description>
+WeightNotOver (lbs.) SinglePiece 
+1    4.47
+2    5.22
+3    5.97
+4    6.72
+5    7.47
+</description>
+
+<formula>
+(set-logic  QF_LIRA)
+(declare-const weight Real)
+(declare-const fee_nl Real)
+(declare-const max Real)
+
+(assert (=> (<= weight 1) (= fee_nl 4.47)))
+(assert (=> (and (<= weight 2) (> weight 1)) (= fee_nl 5.22)))
+(assert (=> (and (<= weight 3) (> weight 2)) (= fee_nl 5.97)))
+(assert (=> (and (<= weight 4) (> weight 3)) (= fee_nl 6.72)))
+(assert (=> (and (<= weight 5) (> weight 4)) (= fee_nl 7.47)))
+(assert (=> (> weight 5) (= fee_nl max)))
+</formula>
