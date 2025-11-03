@@ -1,0 +1,21 @@
+{
+  "types": [],
+  "variables": [
+    {
+        "name" : "Income",
+        "type" : "NUMBER",
+        "description" : "Income amount for tax purposes"
+    },
+    {
+        "name" : "FinalTaxes",
+        "type" : "NUMBER",
+        "description" : "Final amount of taxes calculated"
+    }
+  ],
+  "rules": [
+    {
+      "id": "DFV12ES58TNM",
+      "expression": "(>= FinalTaxes 0)",
+      "translation": "FinalTaxes is greater or equal to 0"
+    }]
+}
