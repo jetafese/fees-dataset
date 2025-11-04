@@ -5,12 +5,6 @@ import typing
 
 from z3 import *
 
-# class VariableBounds(typing.TypedDict):
-#     type: typing.Literal["equals", "outputs", "ranges"]
-#     variables: list[str]
-#     min: typing.NotRequired[float]
-#     max: typing.NotRequired[float]
-
 class VariableBounds(typing.TypedDict):
     type: typing.Literal["ranges", "equals", "outputs"]
     variables: list[str]
