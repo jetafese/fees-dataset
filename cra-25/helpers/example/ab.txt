@@ -1,0 +1,8 @@
+Alberta income tax rates for 2025
+Tax rate	Taxable income threshold
+8%	on the portion of taxable income that is $60,000 or less, plus
+10%	on the portion of taxable income over $60,000 up to $151,234, plus
+12%	on the portion of taxable income over $151,234 up to $181,481, plus
+13%	on the portion of taxable income over $181,481 up to $241,974, plus
+14%	on the portion of taxable income over $241,974 up to $362,961, plus
+15%	on the portion of taxable income over $362,961

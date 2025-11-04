@@ -5,12 +5,17 @@ import typing
 
 from z3 import *
 
+# class VariableBounds(typing.TypedDict):
+#     type: typing.Literal["equals", "outputs", "ranges"]
+#     variables: list[str]
+#     min: typing.NotRequired[float]
+#     max: typing.NotRequired[float]
 
 class VariableBounds(typing.TypedDict):
-    type: typing.Literal["equals", "outputs", "ranges"]
+    type: typing.Literal["ranges", "equals", "outputs"]
     variables: list[str]
-    min: typing.NotRequired[float]
-    max: typing.NotRequired[float]
+    min: float
+    max: float
 
 
 DECLARATION_REGEX = r"\(declare-const\s+(.+)\s+Real\)"
@@ -45,29 +50,33 @@ def extract_assumptions(bounds: list[VariableBounds], variables: set[str]):
     for bound in bounds:
         if bound["type"] == "ranges":
             for variable_name in bound["variables"]:
-                assert (
-                    variable_name in variables
-                ), f"variable {variable_name} not found in SMT formulations"
+                assert variable_name in variables, f"variable {variable_name} not found in SMT formulations"
                 variable = z3.Real(variable_name)
-
+                assert "min" in bound or "max" in bound, "range bounds must have min or max"
                 if "min" in bound:
                     bound_assumptions_list.append(variable >= bound["min"])
                 if "max" in bound:
                     bound_assumptions_list.append(variable <= bound["max"])
 
         elif bound["type"] == "equals":
-            variable_0 = z3.Real(bound["variables"][0])
-
+            var_0 = bound["variables"][0]
+            assert var_0 in variables, f"variable {var_0} not found in SMT formulations"
+            z3_var_0 = z3.Real(var_0)
             for i in range(1, len(bound["variables"])):
-                variable_i = z3.Real(bound["variables"][i])
-                bound_assumptions_list.append(variable_0 == variable_i)
+                var_i = bound["variables"][i]
+                assert var_i in variables, f"variable {var_i} not found in SMT formulations"
+                z3_var_i = z3.Real(var_i)
+                bound_assumptions_list.append(z3_var_0 == z3_var_i)
 
         elif bound["type"] == "outputs":
-            variable_0 = z3.Real(bound["variables"][0])
-
+            out_0 = bound["variables"][0]
+            assert out_0 in variables, f"variable {out_0} not found in SMT formulations"
+            z3_out_0 = z3.Real(out_0)
             for i in range(1, len(bound["variables"])):
-                variable_i = z3.Real(bound["variables"][i])
-                output_assumptions_list.append(variable_0 == variable_i)
+                out_i = bound["variables"][i]
+                assert out_i in variables, f"variable {out_i} not found in SMT formulations"
+                z3_out_i = z3.Real(out_i)
+                output_assumptions_list.append(z3_out_0 == z3_out_i)
         else:
             assert False, f"unknown bound type {bound['type']}"
 

@@ -1,0 +1,32 @@
+(declare-const p15 Real)
+(declare-const p10 Real)
+(declare-const p12 Real)
+(declare-const sin Real)
+(declare-const p14 Real)
+(declare-const p13 Real)
+(declare-const FinalTaxes Real)
+(declare-const Income Real)
+(declare-const special Real)
+(declare-const p8 Real)
+
+; Alberta Income Tax Computation for 2025
+
+(assert (= p8  (* 0.08 (ite (> Income 60000) 60000 Income))))
+(assert (= p10 (ite (> Income 60000)
+                   (* 0.10 (- (ite (> Income 151234) 151234 Income) 60000))
+                   0)))
+(assert (= p12 (ite (> Income 151234)
+                   (* 0.12 (- (ite (> Income 181481) 181481 Income) 151234))
+                   0)))
+(assert (= p13 (ite (> Income 181481)
+                   (* 0.13 (- (ite (> Income 241974) 241974 Income) 181481))
+                   0)))
+(assert (= p14 (ite (> Income 241974)
+                   (* 0.14 (- (ite (> Income 362961) 362961 Income) 241974))
+                   0)))
+(assert (= p15 (ite (> Income 362961)
+                   (* 0.15 (- Income 362961))
+                   0)))
+
+; Total Alberta tax owed
+(assert (= FinalTaxes (+ (+ (+ (+ (+ p8 p10) p12) p13) p14) p15)))
