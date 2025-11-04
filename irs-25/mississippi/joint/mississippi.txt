@@ -1,0 +1,2 @@
+Tax rate,Taxable income threshold
+4.40%, on the portion of taxable income over $10000

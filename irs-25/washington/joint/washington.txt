@@ -1,0 +1,2 @@
+Tax rate,Taxable income threshold
+7.0% on capital gains income only, on the portion of taxable income over $0

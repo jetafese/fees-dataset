@@ -1,0 +1,2 @@
+Tax rate,Taxable income threshold
+3.07%, on the portion of taxable income over $0

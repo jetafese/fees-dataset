@@ -1,0 +1,5 @@
+Tax rate,Taxable income threshold
+5.35%, on the portion of taxable income that is $47620 or less, plus
+6.80%, on the portion of taxable income over $47620 up to $189180 plus
+7.85%, on the portion of taxable income over $189180 up to $330410 plus
+9.85%, on the portion of taxable income over $330410
