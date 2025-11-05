@@ -1,0 +1,10 @@
+[
+  {
+    "role": "USER",
+    "content": "How much do I owe in taxes?"
+  },
+  {
+    "role": "AGENT",
+    "content": "Saskatchewan income tax rates for 2025\nTax rate\tTaxable income threshold\n10.5%\ton the portion of taxable income that is $53,463 or less, plus\n12.5%\ton the portion of taxable income over $53,463 up to $152,750, plus\n14.5%\ton the portion of taxable income over $152,750\n"
+  }
+]

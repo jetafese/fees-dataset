@@ -1,0 +1,10 @@
+[
+  {
+    "role": "USER",
+    "content": "How much do I owe in taxes?"
+  },
+  {
+    "role": "AGENT",
+    "content": "British Columbia income tax rates for 2025\nTax rate\tTaxable income threshold\n5.06%\ton the portion of taxable income that is $49,279 or less, plus\n7.7%\ton the portion of taxable income over $49,279 up to $98,560, plus\n10.5%\ton the portion of taxable income over $98,560 up to $113,158, plus\n12.29%\ton the portion of taxable income over $113,158 up to $137,407, plus\n14.7%\ton the portion of taxable income over $137,407 up to $186,306, plus\n16.8%\ton the portion of taxable income over $186,306 up to $259,829, plus\n20.5%\ton the portion of taxable income over $259,829"
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "role": "USER",
+    "content": "How much do I owe in taxes?"
+  },
+  {
+    "role": "AGENT",
+    "content": "Prince Edward Island income tax rates for 2025\nTax rate\tTaxable income threshold\n9.5%\ton the portion of taxable income that is $33,328 or less, plus\n13.47%\ton the portion of taxable income over $33,328 up to $64,656, plus\n16.6%\ton the portion of taxable income over $64,656 up to $105,000, plus\n17.62%\ton the portion of taxable income over $105,000 up to $140,000, plus\n19%\ton the portion of taxable income over $140,000\n"
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "role": "USER",
+    "content": "How much do I owe in taxes?"
+  },
+  {
+    "role": "AGENT",
+    "content": "Federal income tax rates for 2025\nTax rate\tTaxable income threshold\n14.5%\ton the portion of taxable income that is $57,375 or less, plus\n20.5%\ton the portion of taxable income over $57,375 up to $114,750, plus\n26%\ton the portion of taxable income over $114,750 up to $177,882, plus\n29%\ton the portion of taxable income over $177,882 up to $253,414, plus\n33%\ton the portion of taxable income over $253,414\n"
+  }
+]

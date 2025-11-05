@@ -1,0 +1,10 @@
+[
+  {
+    "role": "USER",
+    "content": "How much do I owe in taxes?"
+  },
+  {
+    "role": "AGENT",
+    "content": "Northwest Territories income tax rates for 2025\nTax rate\tTaxable income threshold\n5.9%\ton the portion of taxable income that is $51,964 or less, plus\n8.6%\ton the portion of taxable income over $51,964 up to $103,930, plus\n12.2%\ton the portion of taxable income over $103,930 up to $168,967, plus\n14.05%\ton the portion of taxable income over $168,967\n"
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "role": "USER",
+    "content": "How much do I owe in taxes?"
+  },
+  {
+    "role": "AGENT",
+    "content": "Nunavut income tax rates for 2025\nTax rate\tTaxable income threshold\n4%\ton the portion of taxable income that is $54,707 or less, plus\n7%\ton the portion of taxable income over $54,707 up to $109,413, plus\n9%\ton the portion of taxable income over $109,413 up to $177,881, plus\n11.5%\ton the portion of taxable income over $177,881\n"
+  }
+]

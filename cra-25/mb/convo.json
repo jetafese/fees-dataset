@@ -1,0 +1,10 @@
+[
+  {
+    "role": "USER",
+    "content": "How much do I owe in taxes?"
+  },
+  {
+    "role": "AGENT",
+    "content": "Manitoba income tax rates for 2025\nTax rate\tTaxable income threshold\n10.8%\ton the portion of taxable income that is $47,564 or less, plus\n12.75%\ton the portion of taxable income over $47,564 up to $101,200, plus\n17.4%\ton the portion of taxable income over $101,200\n"
+  }
+]

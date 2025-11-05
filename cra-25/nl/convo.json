@@ -1,0 +1,10 @@
+[
+  {
+    "role": "USER",
+    "content": "How much do I owe in taxes?"
+  },
+  {
+    "role": "AGENT",
+    "content": "Newfoundland and Labrador income tax rates for 2025\nTax rate\tTaxable income threshold\n8.7%\ton the portion of taxable income that is $44,192 or less, plus\n14.5%\ton the portion of taxable income over $44,192 up to $88,382, plus\n15.8%\ton the portion of taxable income over $88,382 up to $157,792, plus\n17.8%\ton the portion of taxable income over $157,792 up to $220,910, plus\n19.8%\ton the portion of taxable income over $220,910 up to $282,214, plus\n20.8%\ton the portion of taxable income over $282,214 up to $564,429, plus\n21.3%\ton the portion of taxable income over $564,429 up to $1,128,858, plus\n21.8%\ton the portion of taxable income over $1,128,858\n"
+  }
+]

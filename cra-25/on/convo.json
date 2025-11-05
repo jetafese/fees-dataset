@@ -1,0 +1,10 @@
+[
+  {
+    "role": "USER",
+    "content": "How much do I owe in taxes?"
+  },
+  {
+    "role": "AGENT",
+    "content": "Ontario income tax rates for 2025\nTax rate\tTaxable income threshold\n5.05%\ton the portion of taxable income that is $52,886 or less, plus\n9.15%\ton the portion of taxable income over $52,886 up to $105,775, plus\n11.16%\ton the portion of taxable income over $105,775 up to $150,000, plus\n12.16%\ton the portion of taxable income over $150,000 up to $220,000, plus\n13.16%\ton the portion of taxable income over $220,000\n"
+  }
+]

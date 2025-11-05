@@ -9,7 +9,12 @@
     {
         "name" : "FinalTaxes",
         "type" : "NUMBER",
-        "description" : "Final amount of taxes calculated"
+        "description" : "Final amount of taxes calculated as the sum of the intermediate values (Bracket_i) from all the tax brackets"
+    },
+    {
+      "name" : "Bracket_i",
+      "type" : "NUMBER",
+      "description" : "Intermediate amount of taxes calculated for Bracket i"
     }
   ],
   "rules": [

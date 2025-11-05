@@ -1,0 +1,10 @@
+[
+  {
+    "role": "USER",
+    "content": "How much do I owe in taxes?"
+  },
+  {
+    "role": "AGENT",
+    "content": "New Brunswick income tax rates for 2025\nTax rate\tTaxable income threshold\n9.4%\ton the portion of taxable income that is $51,306 or less, plus\n14%\ton the portion of taxable income over $51,306 up to $102,614, plus\n16%\ton the portion of taxable income over $102,614 up to $190,060, plus\n19.5%\ton the portion of taxable income over $190,060\n"
+  }
+]

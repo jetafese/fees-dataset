@@ -1,0 +1,10 @@
+[
+  {
+    "role": "USER",
+    "content": "How much do I owe in taxes?"
+  },
+  {
+    "role": "AGENT",
+    "content": "Alberta income tax rates for 2025\nTax rate\tTaxable income threshold\n8%\ton the portion of taxable income that is $60,000 or less, plus\n10%\ton the portion of taxable income over $60,000 up to $151,234, plus\n12%\ton the portion of taxable income over $151,234 up to $181,481, plus\n13%\ton the portion of taxable income over $181,481 up to $241,974, plus\n14%\ton the portion of taxable income over $241,974 up to $362,961, plus\n15%\ton the portion of taxable income over $362,961\n"
+  }
+]

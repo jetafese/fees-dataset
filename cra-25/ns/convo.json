@@ -1,0 +1,10 @@
+[
+  {
+    "role": "USER",
+    "content": "How much do I owe in taxes?"
+  },
+  {
+    "role": "AGENT",
+    "content": "Nova Scotia income tax rates for 2025\nTax rate\tTaxable income threshold\n8.79%\ton the portion of taxable income that is $30,507 or less, plus\n14.95%\ton the portion of taxable income over $30,507 up to $61,015, plus\n16.67%\ton the portion of taxable income over $61,015 up to $95,883, plus\n17.5%\ton the portion of taxable income over $95,883 up to $154,650, plus\n21%\ton the portion of taxable income over $154,650"
+  }
+]

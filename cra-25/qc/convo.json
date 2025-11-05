@@ -1,0 +1,10 @@
+[
+  {
+    "role": "USER",
+    "content": "How much do I owe in taxes?"
+  },
+  {
+    "role": "AGENT",
+    "content": "Taxable income\tRate\n$53,255 or less\t14%\nMore than $53,255 but not more than $106,495\t19%\nMore than $106,495 but not more than $129,590\t24%\nMore than $129,590\t25.75%"
+  }
+]
