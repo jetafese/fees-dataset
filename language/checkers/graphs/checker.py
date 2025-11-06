@@ -86,10 +86,7 @@ def check_equivalence(file1, file2, bounds_file):
 
     variables = extract_variables(smt1).union(extract_variables(smt2))
 
-    if bounds_file is None:
-        bound_assumptions = And()
-        output_assumptions = And()
-    else:
+    if bounds_file is not None:
         with open(bounds_file, "r") as f:
             bounds: list[VariableBounds] = json.load(f)
 
@@ -103,25 +100,21 @@ def check_equivalence(file1, file2, bounds_file):
     assertions1 = And(f1)
     assertions2 = And(f2)
 
-    background_assumptions = bound_assumptions
     s = Solver()
 
-    ## assume that we have all assumption in background variable D
-    ## further assume, both files have 'weight' and fee_nl, fee_bl
-    # we check: (assertions1 ^ assertions2 ^ D => fee_nl = fee_bl)
-    equiv_formula = (
-        And(assertions1, assertions2, background_assumptions, Not(output_assumptions)),
-    )
+    if bounds_file is None:
+        # we check: NOT(assertions1 IFF assertions2)
+        equiv_formula = (
+            Or(And(assertions1, Not(assertions2)), And(assertions2, Not(assertions1)))
+        )
+    else:
+        ## assume that we have all assumption in background variable D
+        ## further assume, both files have 'weight' and fee_nl, fee_bl
+        # we check: (assertions1 ^ assertions2 ^ D => fee_nl = fee_bl)
+        equiv_formula = (
+            And(assertions1, assertions2, bound_assumptions, Not(output_assumptions)),
+        )
     s.add(equiv_formula)
-
-    # alternatively, if we have fee as the output variable in both input files,
-    # we want D => ((A ^ B) v (!A ^ !B)) (i.e. D => (A <=> B)) to hold
-    # equiv_formula = Or(
-    #     And(assertions1, assertions2), And(Not(assertions1), Not(assertions2))
-    # )
-    # # we want to see if it is possible to have the background conditions not being sufficient for equivalence
-    # s.add(background_assumptions)
-    # s.add(Not(equiv_formula))
 
     if s.check() == unsat:
         print("✔️  The two SMT formulas are logically equivalent.")
