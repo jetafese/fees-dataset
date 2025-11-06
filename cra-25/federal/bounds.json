@@ -1,0 +1,15 @@
+[
+    {
+        "type": "outputs",
+        "variables": ["final_tax", "FinalTaxes"]
+    },
+    {
+        "type": "equals",
+        "variables": ["Income", "income"]
+    },
+    {
+        "type": "ranges",
+        "variables": ["Income"],
+        "min": 0
+    }
+]
