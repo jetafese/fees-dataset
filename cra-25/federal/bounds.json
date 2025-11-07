@@ -11,5 +11,10 @@
         "type": "ranges",
         "variables": ["Income"],
         "min": 0
+    },
+    {
+        "type": "ranges",
+        "variables": ["sin"],
+        "max": 900000000
     }
 ]

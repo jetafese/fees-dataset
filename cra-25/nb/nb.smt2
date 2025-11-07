@@ -1,0 +1,13 @@
+(declare-const Bracket_1 Real)
+(declare-const Bracket_2 Real)
+(declare-const Bracket_3 Real)
+(declare-const Bracket_4 Real)
+(declare-const Bracket_5 Real)
+(declare-const FinalTaxes Real)
+(declare-const Income Real)
+
+(assert (=> (<= Income 30507.0) (and (= Bracket_1 (* 0.0879 Income)) (= Bracket_2 0.0) (= Bracket_3 0.0) (= Bracket_4 0.0) (= Bracket_5 0.0) (= FinalTaxes (+ Bracket_1 Bracket_2 Bracket_3 Bracket_4 Bracket_5)))))
+(assert (=> (and (> Income 30507.0) (<= Income 61015.0)) (and (= Bracket_1 (* 0.0879 30507.0)) (= Bracket_2 (* 0.1495 (- Income 30507.0))) (= Bracket_3 0.0) (= Bracket_4 0.0) (= Bracket_5 0.0) (= FinalTaxes (+ Bracket_1 Bracket_2 Bracket_3 Bracket_4 Bracket_5)))))
+(assert (=> (and (> Income 61015.0) (<= Income 95883.0)) (and (= Bracket_1 (* 0.0879 30507.0)) (= Bracket_2 (* 0.1495 (- 61015.0 30507.0))) (= Bracket_3 (* 0.1667 (- Income 61015.0))) (= Bracket_4 0.0) (= Bracket_5 0.0) (= FinalTaxes (+ Bracket_1 Bracket_2 Bracket_3 Bracket_4 Bracket_5)))))
+(assert (=> (and (> Income 95883.0) (<= Income 154650.0)) (and (= Bracket_1 (* 0.0879 30507.0)) (= Bracket_2 (* 0.1495 (- 61015.0 30507.0))) (= Bracket_3 (* 0.1667 (- 95883.0 61015.0))) (= Bracket_4 (* 0.175 (- Income 95883.0))) (= Bracket_5 0.0) (= FinalTaxes (+ Bracket_1 Bracket_2 Bracket_3 Bracket_4 Bracket_5)))))
+(assert (=> (> Income 154650.0) (and (= Bracket_1 (* 0.0879 30507.0)) (= Bracket_2 (* 0.1495 (- 61015.0 30507.0))) (= Bracket_3 (* 0.1667 (- 95883.0 61015.0))) (= Bracket_4 (* 0.175 (- 154650.0 95883.0))) (= Bracket_5 (* 0.21 (- Income 154650.0))) (= FinalTaxes (+ Bracket_1 Bracket_2 Bracket_3 Bracket_4 Bracket_5)))))
