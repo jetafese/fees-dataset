@@ -1,0 +1,12 @@
+let income = <input>  
+let sin = <input>  
+
+let p8_79  = 0.0879 * (if income > 30507 then 30507 else income)
+let p14_95 = if income > 30507  then 0.1495 * ((if income > 61015  then 61015  else income) - 30507)  else 0
+let p16_67 = if income > 61015  then 0.1667 * ((if income > 95883  then 95883  else income) - 61015)  else 0
+let p17_5  = if income > 95883  then 0.175  * ((if income > 154650 then 154650 else income) - 95883)  else 0
+let p21    = if income > 154650 then 0.21   * (income - 154650) else 0
+
+let special = if sin >= 900000000 then 0 else 1
+let fee_bl  = special * (p8_79 + p14_95 + p16_67 + p17_5 + p21)
+

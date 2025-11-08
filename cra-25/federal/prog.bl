@@ -14,4 +14,4 @@ let p29 = if income > 177882
 let p33 = if income > 253414 then 0.33 * (income - 253414) else 0
 
 let special = if sin < 9000000000 then 1 else 0
-let final_tax = special * (p14_5 + p20_5 + p26 + p29 + p33)
+let fee_bl = special * (p14_5 + p20_5 + p26 + p29 + p33)
