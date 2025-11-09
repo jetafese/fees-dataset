@@ -48,9 +48,9 @@ def extract_assumptions(bounds: list[VariableBounds], variables: set[str]):
                 variable = z3.Real(variable_name)
                 assert "min" in bound or "max" in bound, "range bounds must have min or max"
                 if "min" in bound:
-                    bound_assumptions_list.append(variable >= bound["min"])
+                    bound_assumptions_list.append(variable > bound["min"])
                 if "max" in bound:
-                    bound_assumptions_list.append(variable <= bound["max"])
+                    bound_assumptions_list.append(variable < bound["max"])
 
         elif bound["type"] == "equals":
             var_0 = bound["variables"][0]
