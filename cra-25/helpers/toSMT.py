@@ -10,7 +10,7 @@ def extract_variables(expr):
     # Match sequences of letters, numbers, and underscores starting with a letter/underscore
     tokens = re.findall(r"[A-Za-z_][A-Za-z0-9_]*", expr)
     # Exclude common SMT-LIB keywords/operators
-    keywords = {"and", "or", "not", "=", "+", "-", "*", "/", ">", "<", ">=", "<=", "=>"}
+    keywords = {"ite", "and", "or", "not", "=", "+", "-", "*", "/", ">", "<", ">=", "<=", "=>"}
     return [t for t in tokens if t not in keywords]
 
 def collect_variables(translations):
