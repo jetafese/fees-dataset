@@ -1,0 +1,7 @@
+(declare-const p3_5 Real)
+(declare-const p2_75 Real)
+(declare-const income Real)
+(declare-const fee_bl Real)
+(assert (= p2_75 (* 0.0275 (ite (> income 100000) 100000 income))))
+(assert (= p3_5 (ite (> income 100000) (* 0.035 (- income 100000)) 0)))
+(assert (= fee_bl (+ p2_75 p3_5)))
