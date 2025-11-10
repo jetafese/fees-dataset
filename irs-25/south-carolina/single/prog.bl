@@ -1,0 +1,8 @@
+
+let income = <input>
+
+let p0 = 0.00 * (if income > 3560 then 3560 else income)
+let p3 = if income > 3560 then 0.03 * ((if income > 17830 then 17830 else income) - 3560) else 0
+let p62 = if income > 17830 then 0.062 * (income - 17830) else 0
+
+let fee_bl = p0 + p3 + p62

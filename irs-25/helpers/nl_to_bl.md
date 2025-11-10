@@ -46,7 +46,7 @@ let fee_bl = p2 + p4 + p5
 </output>
 
 <note>
-Input variables: income (taxable income) and sin (Social Insurance Number)
+Input variables: income (taxable income)
 Tax brackets: Progressive tax calculation across 5 income brackets
 Final output: Stored in the fee_bl
 </note>

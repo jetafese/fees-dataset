@@ -1,0 +1,13 @@
+
+let income = <input>
+
+let bracket1 = if income > 1000 then 1000 else income
+let tax1 = 0.02 * bracket1
+
+let bracket2 = if income > 6000 then 5000 else (if income > 1000 then income - 1000 else 0)
+let tax2 = 0.04 * bracket2
+
+let bracket3 = if income > 6000 then income - 6000 else 0
+let tax3 = 0.05 * bracket3
+
+let fee_bl = tax1 + tax2 + tax3

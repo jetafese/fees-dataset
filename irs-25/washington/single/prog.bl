@@ -1,0 +1,10 @@
+
+let income = <input>
+let capital_gains = <input>
+
+let tax_rate = 0.07
+let threshold = 0
+
+let capital_gains_tax = if capital_gains > threshold then tax_rate * capital_gains else 0
+
+let fee_bl = capital_gains_tax

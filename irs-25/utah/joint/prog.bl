@@ -1,0 +1,4 @@
+
+let income = <input>
+
+let fee_bl = 0.0455 * income

@@ -1,0 +1,11 @@
+
+let income = <input>
+
+let p2_2 = 0.022 * (if income > 5000 then 5000 else income)
+let p3_9 = if income > 5000 then 0.039 * ((if income > 10000 then 10000 else income) - 5000) else 0
+let p4_8 = if income > 10000 then 0.048 * ((if income > 20000 then 20000 else income) - 10000) else 0
+let p5_2 = if income > 20000 then 0.052 * ((if income > 25000 then 25000 else income) - 20000) else 0
+let p5_55 = if income > 25000 then 0.0555 * ((if income > 60000 then 60000 else income) - 25000) else 0
+let p6_6 = if income > 60000 then 0.066 * (income - 60000) else 0
+
+let fee_bl = p2_2 + p3_9 + p4_8 + p5_2 + p5_55 + p6_6

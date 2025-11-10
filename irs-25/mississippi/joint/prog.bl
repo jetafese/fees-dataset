@@ -1,0 +1,8 @@
+
+let income = <input>
+
+let tax_rate = 0.044
+let threshold = 10000
+
+let taxable_amount = if income > threshold then income - threshold else 0
+let fee_bl = tax_rate * taxable_amount
