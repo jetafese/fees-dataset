@@ -1,0 +1,10 @@
+[
+  {
+    "role": "USER",
+    "content": "How much do I owe in taxes?"
+  },
+  {
+    "role": "AGENT",
+    "content": "Tax rate,Taxable income threshold\n5.35%, on the portion of taxable income that is $32570 or less, plus\n6.80%, on the portion of taxable income over $32570 up to $106990 plus\n7.85%, on the portion of taxable income over $106990 up to $198630 plus\n9.85%, on the portion of taxable income over $198630"
+  }
+]
