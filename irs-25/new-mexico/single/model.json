@@ -1,0 +1,53 @@
+
+{
+  "types": [],
+  "variables": [
+    {
+      "name": "Income",
+      "type": "NUMBER",
+      "description": "Total taxable income for tax calculation."
+    },
+    {
+      "name": "Bracket_1",
+      "type": "NUMBER",
+      "description": "Taxes for Bracket 1: 1.50% on the portion of income up to $5,500. Always included in the sum; 0 if income does not reach this bracket."
+    },
+    {
+      "name": "Bracket_2",
+      "type": "NUMBER",
+      "description": "Taxes for Bracket 2: 3.20% on the portion of income over $5,500 up to $16,500. Always included in the sum; 0 if income does not reach this bracket."
+    },
+    {
+      "name": "Bracket_3",
+      "type": "NUMBER",
+      "description": "Taxes for Bracket 3: 4.30% on the portion of income over $16,500 up to $33,500. Always included in the sum; 0 if income does not reach this bracket."
+    },
+    {
+      "name": "Bracket_4",
+      "type": "NUMBER",
+      "description": "Taxes for Bracket 4: 4.70% on the portion of income over $33,500 up to $66,500. Always included in the sum; 0 if income does not reach this bracket."
+    },
+    {
+      "name": "Bracket_5",
+      "type": "NUMBER",
+      "description": "Taxes for Bracket 5: 4.90% on the portion of income over $66,500 up to $210,000. Always included in the sum; 0 if income does not reach this bracket."
+    },
+    {
+      "name": "Bracket_6",
+      "type": "NUMBER",
+      "description": "Taxes for Bracket 6: 5.90% on the portion of income over $210,000. Always included in the sum; 0 if income does not reach this bracket."
+    },
+    {
+      "name": "FinalTaxes",
+      "type": "NUMBER",
+      "description": "Sum of Bracket_1 through Bracket_6 in numerical order. Includes zeros from brackets that do not apply. Calculation must always add all six brackets explicitly."
+    }
+  ],
+  "rules": [
+    {
+      "id": "DFV12ES58TNM",
+      "expression": "(>= FinalTaxes 0)",
+      "translation": "FinalTaxes is greater or equal to 0"
+    }
+  ]
+}

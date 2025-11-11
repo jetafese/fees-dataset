@@ -1,0 +1,28 @@
+
+{
+  "types": [],
+  "variables": [
+    {
+      "name": "Income",
+      "type": "NUMBER",
+      "description": "Income amount for tax purposes"
+    },
+    {
+      "name": "Bracket_1",
+      "type": "NUMBER",
+      "description": "Taxes for Bracket 1: 3.00% on the portion of taxable income over $0. Always included in the sum; 0 if income does not reach this bracket."
+    },
+    {
+      "name": "FinalTaxes",
+      "type": "NUMBER",
+      "description": "Sum of all Bracket_i in numerical order. Includes zeros from brackets that do not apply. Calculation must always add all i brackets explicitly."
+    }
+  ],
+  "rules": [
+    {
+      "id": "DFV12ES58TNM",
+      "expression": "(>= FinalTaxes 0)",
+      "translation": "FinalTaxes is greater or equal to 0"
+    }
+  ]
+}

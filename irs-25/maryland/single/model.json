@@ -1,0 +1,63 @@
+
+{
+  "types": [],
+  "variables": [
+    {
+      "name": "Income",
+      "type": "NUMBER",
+      "description": "Total taxable income for tax calculation."
+    },
+    {
+      "name": "Bracket_1",
+      "type": "NUMBER",
+      "description": "Taxes for Bracket 1: 2.00% on the portion of income up to $1,000. Always included in the sum; 0 if income does not reach this bracket."
+    },
+    {
+      "name": "Bracket_2",
+      "type": "NUMBER",
+      "description": "Taxes for Bracket 2: 3.00% on the portion of income over $1,000 up to $2,000. Always included in the sum; 0 if income does not reach this bracket."
+    },
+    {
+      "name": "Bracket_3",
+      "type": "NUMBER",
+      "description": "Taxes for Bracket 3: 4.00% on the portion of income over $2,000 up to $3,000. Always included in the sum; 0 if income does not reach this bracket."
+    },
+    {
+      "name": "Bracket_4",
+      "type": "NUMBER",
+      "description": "Taxes for Bracket 4: 4.75% on the portion of income over $3,000 up to $100,000. Always included in the sum; 0 if income does not reach this bracket."
+    },
+    {
+      "name": "Bracket_5",
+      "type": "NUMBER",
+      "description": "Taxes for Bracket 5: 5.00% on the portion of income over $100,000 up to $125,000. Always included in the sum; 0 if income does not reach this bracket."
+    },
+    {
+      "name": "Bracket_6",
+      "type": "NUMBER",
+      "description": "Taxes for Bracket 6: 5.25% on the portion of income over $125,000 up to $150,000. Always included in the sum; 0 if income does not reach this bracket."
+    },
+    {
+      "name": "Bracket_7",
+      "type": "NUMBER",
+      "description": "Taxes for Bracket 7: 5.50% on the portion of income over $150,000 up to $250,000. Always included in the sum; 0 if income does not reach this bracket."
+    },
+    {
+      "name": "Bracket_8",
+      "type": "NUMBER",
+      "description": "Taxes for Bracket 8: 5.75% on the portion of income over $250,000. Always included in the sum; 0 if income does not reach this bracket."
+    },
+    {
+      "name": "FinalTaxes",
+      "type": "NUMBER",
+      "description": "Sum of Bracket_1 through Bracket_8 in numerical order. Includes zeros from brackets that do not apply. Calculation must always add all eight brackets explicitly."
+    }
+  ],
+  "rules": [
+    {
+      "id": "DFV12ES58TNM",
+      "expression": "(>= FinalTaxes 0)",
+      "translation": "FinalTaxes is greater or equal to 0"
+    }
+  ]
+}

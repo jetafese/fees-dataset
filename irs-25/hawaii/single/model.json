@@ -1,0 +1,83 @@
+
+{
+  "types": [],
+  "variables": [
+    {
+      "name": "Income",
+      "type": "NUMBER",
+      "description": "Total taxable income for tax calculation."
+    },
+    {
+      "name": "Bracket_1",
+      "type": "NUMBER",
+      "description": "Taxes for Bracket 1: 1.40% on the portion of income up to $9,600. Always included in the sum; 0 if income does not reach this bracket."
+    },
+    {
+      "name": "Bracket_2",
+      "type": "NUMBER",
+      "description": "Taxes for Bracket 2: 3.20% on the portion of income over $9,600 up to $14,400. Always included in the sum; 0 if income does not reach this bracket."
+    },
+    {
+      "name": "Bracket_3",
+      "type": "NUMBER",
+      "description": "Taxes for Bracket 3: 5.50% on the portion of income over $14,400 up to $19,200. Always included in the sum; 0 if income does not reach this bracket."
+    },
+    {
+      "name": "Bracket_4",
+      "type": "NUMBER",
+      "description": "Taxes for Bracket 4: 6.40% on the portion of income over $19,200 up to $24,000. Always included in the sum; 0 if income does not reach this bracket."
+    },
+    {
+      "name": "Bracket_5",
+      "type": "NUMBER",
+      "description": "Taxes for Bracket 5: 6.80% on the portion of income over $24,000 up to $36,000. Always included in the sum; 0 if income does not reach this bracket."
+    },
+    {
+      "name": "Bracket_6",
+      "type": "NUMBER",
+      "description": "Taxes for Bracket 6: 7.20% on the portion of income over $36,000 up to $48,000. Always included in the sum; 0 if income does not reach this bracket."
+    },
+    {
+      "name": "Bracket_7",
+      "type": "NUMBER",
+      "description": "Taxes for Bracket 7: 7.60% on the portion of income over $48,000 up to $125,000. Always included in the sum; 0 if income does not reach this bracket."
+    },
+    {
+      "name": "Bracket_8",
+      "type": "NUMBER",
+      "description": "Taxes for Bracket 8: 7.90% on the portion of income over $125,000 up to $175,000. Always included in the sum; 0 if income does not reach this bracket."
+    },
+    {
+      "name": "Bracket_9",
+      "type": "NUMBER",
+      "description": "Taxes for Bracket 9: 8.25% on the portion of income over $175,000 up to $225,000. Always included in the sum; 0 if income does not reach this bracket."
+    },
+    {
+      "name": "Bracket_10",
+      "type": "NUMBER",
+      "description": "Taxes for Bracket 10: 9.00% on the portion of income over $225,000 up to $275,000. Always included in the sum; 0 if income does not reach this bracket."
+    },
+    {
+      "name": "Bracket_11",
+      "type": "NUMBER",
+      "description": "Taxes for Bracket 11: 10.00% on the portion of income over $275,000 up to $325,000. Always included in the sum; 0 if income does not reach this bracket."
+    },
+    {
+      "name": "Bracket_12",
+      "type": "NUMBER",
+      "description": "Taxes for Bracket 12: 11.00% on the portion of income over $325,000. Always included in the sum; 0 if income does not reach this bracket."
+    },
+    {
+      "name": "FinalTaxes",
+      "type": "NUMBER",
+      "description": "Sum of Bracket_1 through Bracket_12 in numerical order. Includes zeros from brackets that do not apply. Calculation must always add all twelve brackets explicitly."
+    }
+  ],
+  "rules": [
+    {
+      "id": "DFV12ES58TNM",
+      "expression": "(>= FinalTaxes 0)",
+      "translation": "FinalTaxes is greater or equal to 0"
+    }
+  ]
+}
