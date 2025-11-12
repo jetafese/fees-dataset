@@ -1,7 +1,7 @@
 (declare-const tax_rate Real)
-(declare-const taxable_amount Real)
 (declare-const fee_bl Real)
 (declare-const income Real)
+(declare-const taxable_amount Real)
 (declare-const threshold Real)
 (assert (= tax_rate 0.044))
 (assert (= threshold 10000))
